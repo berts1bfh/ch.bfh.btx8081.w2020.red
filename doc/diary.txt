@@ -1,3 +1,76 @@
-test
+18.10.2020: Meeting - Scoping, Research
+Teilnehmer: Alle
+Besprechung der weiteren Vorgehensweise. Ausarbeiten Kontakte für Interviews.
+Besprechung der recherchierten Literatur.
 
-test 2
+18.10.2020 -21.10.2020: Arbeit - Research
+Fertigstellung des Interview-Bogens
+
+22.10.2020 11:00: Interview Dr. Hausmann (D. Moser)
+
+22.10.2020 17:00: Meeting - Scoping, Research & Synthesize
+Teilnehmer: Alle
+
+Besprechung des ersten Interviews mit Dr. Hausmann. Highlights des Experten:
+- Kaskade: Notfallknopf mit prioritären Kontakten (Bevorzugung des eigenen sozialen Netzwerks)
+- Personifizierung: Gesicht als Referenzpunkt hilft sich mit Konsequenzen zu identifizieren
+- Terminplanung: Wichtiger Punkt, Einhaltung von Abmachungen - Meldung falls Treffen nicht möglich
+-> Patient sollte keine führender Akteur sein, d.h. Terminvorgaben sind fix durch Therapeuten vorgegeben.
+- Gemüts-Tagebuch: Sehr sinnvoll. Immer verfügbar. Einträge sollten eher persönlich sein, ausser keine Kontakte (?)
+- Aktive Benachrichtigung: Sehr sinnvoll.
+- Standardformulare - Nein, jedoch Befindlichkeitsfragebögen (ähnlich Ansatz Gemüts-Tagebuch?)
+- Therapie-Phasen: Ja
+- Notfallknopf: Ja
+- Follow-Up: Ja, Use Case / Prototyp ...
+
+Verbesserung / Kritik an Fragebogen?
+In Interview: Geschlossene Fragen eher weniger gut, auch Skalierung eher schwierig.
+Generelle Fragen: Helfen neue Funktionalitäten zu erkennen
+- Lösung für Patienten / Werkzeug für Therapie: Eine Balance
+Vorgabe von Funktionen: Lässt uns Ideen durch Experten besser evaluieren
+Fehlende Fragen: Bezüglich des Patienten, was könnte wichtig sein?
+Welche Probleme muss der Patient bewältigen können? Wie kann die Applikation dazu helfen?
+Evtl. Frage: Wie sieht der Tagesablauf eines Patienten aus?
+
+Diskussionspunkte:
+Nicht zu viele Kaskade-Punkte (Überforderung), d.h. effektive 2-3 Kontakte
+Wichtigkeit der Suchtform / Konzipierung der App auf eine Suchtform: Unklar, muss überprüft werden
+Gemüts-Tagebuch / Wenige Kontakten: Eventuell falls Therapeut einzige Bezugsperson ist. Auch dann: Sollte privat sein
+Befindlichkeitsfragebögen? Eventuell auch im Gemüts-Tagebuch für Nicht-gern-Schreiber
+
+Recherche: Therapieformen (Besprechung bezüglich Features)
+Allgemeine Sucht: Relativ breites Spektrum, Schwierigkeit abuzudecken
+Vorschlag: Reduzieren auf gängigste Suchtarten: Alkohol und Tabak laut sucht schweizweit
+Alkohol: Zwei Hauptgruppen:
+- Junge: Ausgang / oft in Kombination mit Spielsucht
+- Alte: Ältere Menschen am Lebensende, oft in Kombination mit Medikamenten
+
+Scoping Entscheidungen: Festlegung auf Alkohol als Haupt-Sucht-Form (mit Nebenerscheinungen)
+Begründung: Deckt verschiedene Altersgruppen ab, hat oft Zweit- oder Dritt-Abhängigkeiten
+- Frage: Aufnahme von Meidkamentation in die Applikation ...
+- Begründung: Breites Spektrum, besser spezifische Persona / Story-Boards
+
+Features durch Interview / Recherche:
+- Notfallknopf mit Kaskade-Funktion (2-3 Personen + Personifizerung)
+- Terminplanung mit Push-Benachrichtigung (Medikamentation, Erinnerung, Nachfragen)
+- Gemütstagebuch mit Standard-Skalierung, Text
+- Instruktion: Personifizerung
+
+Nächster Schritt: Personas
+Zwei Hauptgruppen:
+Junge Persona: Jung, Ausgang/Alkohol als Ausflucht, sowie Spiel-Sucht
+Alte Persona: Am Lebensende, Alkohol-Sucht als Ausweg vor der eigenen Morbiditiät mit Medikamentation aufgrund Komorbiditäten,
+              kann nicht mehr so gut schreiben (Zitter-Hand / Tremor von Alkoholiker auf Entzug)
+Therapeut: Gesichtslose Entität, will eine gute Applikation zur Unterstützung von Sucht-Erkrankten
+
+Aufteilung:
+Personas Jung / Alt anhand Recherche: Sabine
+Persona Therapeut anhand Recherche / Interview: Simon
+Jeder zwei Storyboards, mind. eins zum Thema unten:
+Instruktion: Sabine
+Notfallknopf: Andre
+Termin-Planer: Denis
+Gemütstagebuch: Simon
+Evtl. Interview (Andre)
+
+Besprechungstermin & Iteration Storyboards / Prototyping: 24.10.2020 14:00
