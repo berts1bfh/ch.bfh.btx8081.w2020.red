@@ -4,6 +4,7 @@ Teilnehmer: Alle
 Task 1 besprochen:
 	- Zeit ist knapp
 	- Interview muss möglichst früh organisiert werden: Termine und Fragen
+	- Fuer Uebersicht Flowchart erstellt
 
 Besprechung der weiteren Vorgehensweise. Ausarbeiten Kontakte fÃ¼r Interviews.
 - Interview: Anfragen fuer Interviews sollten moeglichst früh rausgehen. Jeder erstellt Fragen und dann wählen wir aus.
@@ -28,6 +29,7 @@ To do 18.10.2020 -21.10.2020: Arbeit - Research
 - Weitere Recherche: Literatur, Case Studies, ...
 - Fertigstellung des Interview-Bogens übernimmt Sabine
 - Weiter mögliche Interview-Kontakte anfragen
+- Simon kümmert sich zusätzlich ums einrichten des Repository
 
 22.10.2020 11:00: Interview Dr. Hausmann (D. Moser)
 
