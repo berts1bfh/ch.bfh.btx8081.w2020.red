@@ -1,0 +1,24 @@
+Persona
+
+Therapeut A, die Progressive
+Persona    : Helena, 27, möchte sich spezialisieren & selbstständig machen
+Rolle	   : frisch ausgebildete Therapeutin, freischaffender Coach
+Skills     : Weitreichende Ausbildung, Erfahrung mit alternativen Therapieformen
+             Digital-Native
+Goals  	   : Möchte jungen Patienten aktuelle Techniken bieten
+             und auch ältere Patienten von diesen überzeugen
+Pain points: Kaum Erfahrung mit Sucht-Patienten, 
+             hat Schwierigkeiten ältere Patienten mit neuen Therapieformen zu behandeln
+
+Therapeut B, der Konservative
+Persona    : Kurt, 64 Jahre alt, freut sich auf die baldige Pensionierung
+Rolle      : Therapeut in Gemeinschaftspraxis (zusammen mit einem Arzt)
+Skills     : Langjährige Erfahrung in traditioneller Sucht-Behandlung
+   	     Hat Weiterbildungen gemacht mit neuen Therapieformen, 
+             schwört jedoch auf herkömmliche 'handfeste' Therapie
+	     Möchte keinerlei grössere Änderungen, hat einen älteren 
+Goals	   : Kundenstamm der mit klassischer Therapie zufrieden ist weiter behandeln
+             Möchte jedoch jüngeren Patienten besser einbeziehen, 
+             bei welchen herkömmliche Methoden nicht ziehen ("Tagebuch vergessen...")
+Pain points: Technologie, Umstieg auf digitale Krankenakten-Führung 
+             in der Gemeinschaftspraxis (in Zusammenarbeit mit Arzt)
