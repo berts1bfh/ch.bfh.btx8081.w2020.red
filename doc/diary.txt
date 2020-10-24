@@ -76,7 +76,8 @@ Evtl. Interview (Andre)
 
 Besprechungstermin & Iteration Storyboards / Prototyping: 24.10.2020 14:00
 
-24.10.2020 14:00: Meeting - Research, Synthesize & Design
+24.10.2020 14:00: Meeting - Research, Synthesize, Design & Prototyping, Validation Planning
+Teilnehmer: Alle
 
 Research Ergänzungen:
 Vorstellung Interview 2. (Andre) Prof. Gerber:
@@ -126,3 +127,44 @@ Mögliches Feature(s) aus Research Ergänzung:
 Besprechung Interview (neben obriger Ergänzung):
 Weiteres Interview? Nicht notwendig, kurzer Zeitraum, schnelle Iteration.
 Falls ja, dann eher Feedback zu ... oder Follow-Ups
+
+Persona, jeweils Alt / Jung
+2 Patienten-Persona (Sabine)
+2 Therapeuten-Persona (Simon)
+-> In Task01 abgelegt
+
+Design: Vorstellung der Story-Boards
+
+Prototyping: Auswahl der Card-Based Prototypes mit Auftrag
+- Terminkalender: Der alte Vergessliche (Denis)
+- Notfallknopf ( in Kombination mit Instruktionen ):
+  Ergänzung / Storyboard notwendig aus neuer Synthese der Research
+  (Andre)
+- Gemüts-Tagebuch: Mit Therapeut (Simon)
+- Ergänzung Storyboards auf storyboardthat (Sabine)
+
+Validation:
+
+Survey-Monkey Setup (Andre)
+2-3 Liquid-Scales, 1 Frei-Text-Feedback
+1. Look & Feel: Ist diese Story realistisch / praxisnahe?
+2. Benutzerfreundlichkeit
+
+Aufteilung Vortrag (grob):
+- Einleitung: Scoping, Research, Interviews
+- Synthesize: Problematik Alkoholiker
+- 4 Personas
+- Storyboards & Prototypes
+- Feedback / Aussicht
+
+Aufträge (Recap):
+Prototyping:
+- Simon: Gemüts-Tagebuch (Therapeut / Patient)
+- Denis: Terminkalender (Vergesslicher Alter Mann - Stroy)
+- Andre: Notfallknopf
+Sonstiges:
+- Sabine: Story-Board: Notfallknopf mit Instruktion + Anfang Vortrag
+- Andre: Survey-Monkey, zweites Storyboard
+- Denis: Ergänzungen
+
+Termine: Sonntag, 11:00 Uhr: Besprechung, Vortrag sowie Validierung
