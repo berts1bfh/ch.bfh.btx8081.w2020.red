@@ -1,7 +1,31 @@
 18.10.2020: Meeting - Scoping, Research
 Teilnehmer: Alle
+
+Task 1 besprochen, anhand eigens erstellten Flowchart:
+	- Zeit ist knapp
+	- Interview ist zentral, und muss möglichst früh organisiert werden.
+
 Besprechung der weiteren Vorgehensweise. Ausarbeiten Kontakte fÃ¼r Interviews.
+- Interview: Anfragen fuer Interviews sollten moeglichst früh rausgehen. Jeder arbeitet Fragen aus bis Morgen.
+- Scoping: 
+	Im Scope:
+		- Generell: App sollte flexibel und anpassungsfähig sein
+		- Therapeuten sollten ggf. Zugriff auf Daten haben --> Dies in den Interview erheben.
+		- Therapie-Formen wie Gruppentherapie ggf. berücksichtigen
+		- Ortsunabhängigkeit
+		- App sollte nicht der Vereinsamung beitragen, Patienten sollten unabhängigkeit bewahren können
+		- Kontaktaufnahme mit Angehörige und Therapeuten sollte beachtet werden
+	Out-of-Scope
+		- Alle Suchtformen beachten--> Im Interview fragen, ob dies so sein soll
+		- AI/Komplexe Algo: App sollte nicht Therapeuten ersetzen können, indem Instruktionen von der App allein gegeben werden
+		- Chatbot (wie bei Ana-App)
+
 Besprechung der recherchierten Literatur.
+	- ggf. muss man sich auf eine Suchtform konzentrieren, Suchttherapie hat zwar allgemeine Aspekte
+
+To do:
+- Jeder erstellt Fragen für Fragebogen
+
 
 
 18.10.2020 -21.10.2020: Arbeit - Research
