@@ -75,3 +75,54 @@ Gemütstagebuch: Simon
 Evtl. Interview (Andre)
 
 Besprechungstermin & Iteration Storyboards / Prototyping: 24.10.2020 14:00
+
+24.10.2020 14:00: Meeting - Research, Synthesize & Design
+
+Research Ergänzungen:
+Vorstellung Interview 2. (Andre) Prof. Gerber:
+- Keine Anweisungen / Medikamente (so wenig wie möglich)
+- Angehörige einbeziehen: Ja, definitiv. Wichtiger Bestandteil!
+- Notfallknopf: Je nach dem, Termin-Zugriff durch Drittpersonen: Eher nicht
+- Wie sollen Angehörige eingebunden werden?
+-> Je nach dem, wie diese Untestützen können. Positive und negative Einflüsse möglich!
+Ziel sollte es sein, Patienten selbständig zu machen!
+- Instruktionen / Anweisungen: Sicher hilfreich, sollten aber auch selbst entwickelt und nachlesbar sein!
+-> Hier auch wieder: Ziel selbstständig zu sein / selbst sich zu 'verwalten'
+- Audio-Visuelle Darstellungen am effektivsten! Z.B. Alkohol-Pegel, Grenze !
+-> Be my angel - Applikation (App, welche Alkohol Konsum misst. Graphische Darstellung)
+- Terminplanung? Sehr wichtig - Suchtklienten haben kürzere Zeithorizonte - bis zur nächsten Einnahme
+- Suchtformen oder Spezialisierung? Verallgemeinerung könnte negativ sein. Mechanismen sind ähnlich,
+  jedoch wären Patienten nicht 'abgeholt' - Therapie ist massgeschneidert!
+- Gemüts-Tagebuch / Wünsche / Meinung: Sehr gute Idee! Nicht nur für Therapeuten, sondern auch für Patient
+  Viele Alkoholiker sind sich nicht bewusst, dass dies den emotionalen Zustand beeinflusst! (z.B. Wut!)
+  Kurze Fragen können Zusammenhang zwischen psychischer Stimmung und Konsum aufzeigen!
+- Arzt Zugriff?
+  Zustimmung notwendig durch Patienten, wäre hilfreich
+- Erinnerungen? Push-Messages für Erinnerung an Tagebuch und Termin sehr gut!
+- Standardformulare: Nicht umbedingt, je nach Bedarf. Manchmal, kommt auf Patienten an.
+  Trink-Tagebücher, Tabak-Raucher Menge / Zeit...
+- Funktionen / Werkzeuge:
+  Mögliche Nachbetreuung, 1 Monat, halbes Jahr oder 1 Jahr nach Behandlung... (Auf Wunsch)
+- Dashboard: Gute Idee, Übersicht zu halten. Auswahl durch Patienten (Selbstständigkeit)
+- Sucht-Phasen? Spirale des Wandels (6 Phasen), Phasen für Tabak: nichtrauchen.ch - jedoch fliessend
+  Oft ohne Phasen-Modell
+  Kontakt und Motivation, Entgiftung, Entwöhnungsbehandlung, Nachsorge, Rehabilitation
+- Notfallknopf für Verbindung mit Angehörigen / Therapeut?
+  Super Idee! Hinweise für verschiedene Situationen wären auch gut. Er sollte mehrere Ebenen umfassen:
+  Zuerst Person beruhigen (Beruhigung), dann falls gleichwohl Notfall eskalieren zu Angehörigen -> Therapeut
+- No-Goes? Sollte Instrument zur Förderung des Selbstmanagements sein. Keine Abhängigkeit schaffen, notwendig sein.
+  Patient sollte von App unabhängig gemacht werden!
+
+Dokumentation (SRF Mittendrin):
+Anonyme Alkoholiker Zürich
+- Grenze zu Alkoholiker: Kann nicht mehr ohne. Drei Glas Wein zum einschlafen z.B.
+Ergänzung: Score-Tabelle zur Einteilung / Typisierung für Alkoholiker
+
+Mögliches Feature(s) aus Research Ergänzung:
+- Alkohol-Pegel Meter (Auf Behandlungsstufe 'Bewusster Umgang', oder für noch-nicht-Alkoholiker)
+- Kurven / Übersicht für Gemütstagebuch (Link: Gemüt und Konsum)
+- Gemütstagebuch: Emotionen-Wolke
+
+Besprechung Interview (neben obriger Ergänzung):
+Weiteres Interview? Nicht notwendig, kurzer Zeitraum, schnelle Iteration.
+Falls ja, dann eher Feedback zu ... oder Follow-Ups
