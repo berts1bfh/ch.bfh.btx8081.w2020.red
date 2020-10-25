@@ -1,4 +1,4 @@
-18.10.2020: Meeting - Scoping, Research
+18.10.2020, 40min: Meeting - Scoping, Research
 Teilnehmer: Alle
 
 Task 1 besprochen:
@@ -31,9 +31,9 @@ To do 18.10.2020 -21.10.2020: Arbeit - Research
 - Weiter mögliche Interview-Kontakte anfragen
 - Simon kümmert sich zusätzlich ums einrichten des Repository
 
-22.10.2020 11:00: Interview Dr. Hausmann (D. Moser)
+22.10.2020 11:00, 35min: Interview Dr. Hausmann (D. Moser)
 
-22.10.2020 17:00: Meeting - Scoping, Research & Synthesize
+22.10.2020 17:00, 30min: Meeting - Scoping, Research & Synthesize
 Teilnehmer: Alle
 
 Besprechung des ersten Interviews mit Dr. Hausmann. Highlights des Experten:
@@ -100,7 +100,7 @@ Evtl. Interview (Andre)
 
 Besprechungstermin & Iteration Storyboards / Prototyping: 24.10.2020 14:00
 
-24.10.2020 14:00: Meeting - Research, Synthesize, Design & Prototyping, Validation Planning
+24.10.2020 14:00, 100min: Meeting - Research, Synthesize, Design & Prototyping, Validation Planning
 Teilnehmer: Alle
 
 Research ErgÃ¤nzungen:
