@@ -3,33 +3,33 @@ Teilnehmer: Alle
 
 Task 1 besprochen:
 	- Zeit ist knapp
-	- Interview muss möglichst früh organisiert werden: Termine und Fragen
+	- Interview muss mï¿½glichst frï¿½h organisiert werden: Termine und Fragen
 	- Fuer Uebersicht Flowchart erstellt
 
 Besprechung der weiteren Vorgehensweise. Ausarbeiten Kontakte fÃ¼r Interviews.
-- Interview: Anfragen fuer Interviews sollten moeglichst früh rausgehen. Jeder erstellt Fragen und dann wählen wir aus.
+- Interview: Anfragen fuer Interviews sollten moeglichst frï¿½h rausgehen. Jeder erstellt Fragen und dann wï¿½hlen wir aus.
 - Scoping: 
 	Im Scope:
-		- Generell: App sollte flexibel und anpassungsfähig sein
+		- Generell: App sollte flexibel und anpassungsfï¿½hig sein
 		- Therapeuten sollten ggf. Zugriff auf Daten haben --> Dies in den Interview erheben.
-		- Therapie-Formen wie Gruppentherapie ggf. berücksichtigen
-		- Ortsunabhängigkeit
-		- App sollte nicht der Vereinsamung beitragen, Patienten sollten unabhängigkeit bewahren können
-		- Kontaktaufnahme mit Angehörige und Therapeuten sollte beachtet werden
+		- Therapie-Formen wie Gruppentherapie ggf. berï¿½cksichtigen
+		- Ortsunabhï¿½ngigkeit
+		- App sollte nicht der Vereinsamung beitragen, Patienten sollten unabhï¿½ngigkeit bewahren kï¿½nnen
+		- Kontaktaufnahme mit Angehï¿½rige und Therapeuten sollte beachtet werden
 	Out-of-Scope
 		- Alle Suchtformen beachten--> Im Interview fragen, ob dies so sein soll
-		- AI/Komplexe Algo: App sollte nicht Therapeuten ersetzen können, indem Instruktionen von der App allein gegeben werden
+		- AI/Komplexe Algo: App sollte nicht Therapeuten ersetzen kï¿½nnen, indem Instruktionen von der App allein gegeben werden
 		- Chatbot (wie bei Ana-App)
 
 Besprechung der recherchierten Literatur.
 	- ggf. muss man sich auf eine Suchtform konzentrieren, Suchttherapie hat zwar allgemeine Aspekte
 
 To do 18.10.2020 -21.10.2020: Arbeit - Research
-- Jeder erstellt Fragen für Fragebogen
+- Jeder erstellt Fragen fï¿½r Fragebogen
 - Weitere Recherche: Literatur, Case Studies, ...
-- Fertigstellung des Interview-Bogens übernimmt Sabine
-- Weiter mögliche Interview-Kontakte anfragen
-- Simon kümmert sich zusätzlich ums einrichten des Repository
+- Fertigstellung des Interview-Bogens ï¿½bernimmt Sabine
+- Weiter mï¿½gliche Interview-Kontakte anfragen
+- Simon kï¿½mmert sich zusï¿½tzlich ums einrichten des Repository
 
 22.10.2020 11:00: Interview Dr. Hausmann (D. Moser)
 
@@ -192,3 +192,13 @@ Sonstiges:
 - Denis: ErgÃ¤nzungen
 
 Termine: Sonntag, 11:00 Uhr: Besprechung, Vortrag sowie Validierung
+
+25.10.2020 11:00 Uhr Meeting
+
+Besprechung FoliensÃ¤tze und Aufteilung:
+Jeder prÃ¤sentiert den von ihm gestalteten Prototyp
+
+Besprechung & Erstes Feedback Prototypen
+- Notfallknopf: Evtl. Swipe / Tabs fÃ¼r nÃ¤chste Funktion / Eskalation
+- Terminkalender:
+- GemÃ¼ts Tagebuch: Drei Screens
