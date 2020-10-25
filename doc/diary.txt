@@ -3,33 +3,33 @@ Teilnehmer: Alle
 
 Task 1 besprochen:
 	- Zeit ist knapp
-	- Interview muss mˆglichst fr¸h organisiert werden: Termine und Fragen
+	- Interview muss mÔøΩglichst frÔøΩh organisiert werden: Termine und Fragen
 	- Fuer Uebersicht Flowchart erstellt
 
 Besprechung der weiteren Vorgehensweise. Ausarbeiten Kontakte f√ºr Interviews.
-- Interview: Anfragen fuer Interviews sollten moeglichst fr¸h rausgehen. Jeder erstellt Fragen und dann w‰hlen wir aus.
+- Interview: Anfragen fuer Interviews sollten moeglichst frÔøΩh rausgehen. Jeder erstellt Fragen und dann wÔøΩhlen wir aus.
 - Scoping: 
 	Im Scope:
-		- Generell: App sollte flexibel und anpassungsf‰hig sein
+		- Generell: App sollte flexibel und anpassungsfÔøΩhig sein
 		- Therapeuten sollten ggf. Zugriff auf Daten haben --> Dies in den Interview erheben.
-		- Therapie-Formen wie Gruppentherapie ggf. ber¸cksichtigen
-		- Ortsunabh‰ngigkeit
-		- App sollte nicht der Vereinsamung beitragen, Patienten sollten unabh‰ngigkeit bewahren kˆnnen
-		- Kontaktaufnahme mit Angehˆrige und Therapeuten sollte beachtet werden
+		- Therapie-Formen wie Gruppentherapie ggf. berÔøΩcksichtigen
+		- OrtsunabhÔøΩngigkeit
+		- App sollte nicht der Vereinsamung beitragen, Patienten sollten unabhÔøΩngigkeit bewahren kÔøΩnnen
+		- Kontaktaufnahme mit AngehÔøΩrige und Therapeuten sollte beachtet werden
 	Out-of-Scope
 		- Alle Suchtformen beachten--> Im Interview fragen, ob dies so sein soll
-		- AI/Komplexe Algo: App sollte nicht Therapeuten ersetzen kˆnnen, indem Instruktionen von der App allein gegeben werden
+		- AI/Komplexe Algo: App sollte nicht Therapeuten ersetzen kÔøΩnnen, indem Instruktionen von der App allein gegeben werden
 		- Chatbot (wie bei Ana-App)
 
 Besprechung der recherchierten Literatur.
 	- ggf. muss man sich auf eine Suchtform konzentrieren, Suchttherapie hat zwar allgemeine Aspekte
 
 To do 18.10.2020 -21.10.2020: Arbeit - Research
-- Jeder erstellt Fragen f¸r Fragebogen
+- Jeder erstellt Fragen fÔøΩr Fragebogen
 - Weitere Recherche: Literatur, Case Studies, ...
-- Fertigstellung des Interview-Bogens ¸bernimmt Sabine
-- Weiter mˆgliche Interview-Kontakte anfragen
-- Simon k¸mmert sich zus‰tzlich ums einrichten des Repository
+- Fertigstellung des Interview-Bogens ÔøΩbernimmt Sabine
+- Weiter mÔøΩgliche Interview-Kontakte anfragen
+- Simon kÔøΩmmert sich zusÔøΩtzlich ums einrichten des Repository
 
 22.10.2020 11:00, 35min: Interview Dr. Hausmann (D. Moser)
 
@@ -192,3 +192,31 @@ Sonstiges:
 - Denis: Erg√§nzungen
 
 Termine: Sonntag, 11:00 Uhr: Besprechung, Vortrag sowie Validierung
+
+25.10.2020 11:00 Uhr Meeting
+
+Besprechung Foliens√§tze und Aufteilung:
+Jeder pr√§sentiert den von ihm gestalteten Prototyp
+
+Besprechung & Erstes Feedback Prototypen
+- Notfallknopf: Evtl. Swipe / Tabs f√ºr n√§chste Funktion / Eskalation
+- Terminkalender:
+- Gem√ºts Tagebuch: Drei Screens
+
+Pr√§sentation
+- Scoping & Research (Sabine)
+-> Interview mit Therapeuten, Scoping auf Alkoholiker
+- Persona (Simon)
+- Storyboards (Andre)
+- Prototypen (Jeder seins)
+- Validation (Denis)
+
+Arbeiten:
+Andre: Validation Questoinaire Storyboards (Gem√ºts-Tagebuch, Notfallknopf, Terminkalender)
+       Pr√§sentation: Storyboards
+Simon: Bisamiq Wireframe f√ºr Prototypen
+       Pr√§sentation: Persona
+Denis: Pr√§sentation: Validation
+
+Projektname: Acadia
+Auswahl Logo: Kreis, leicht ge√∂ffnet, symbolisch f√ºr die Spirale des Wandels
