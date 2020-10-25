@@ -202,3 +202,21 @@ Besprechung & Erstes Feedback Prototypen
 - Notfallknopf: Evtl. Swipe / Tabs für nächste Funktion / Eskalation
 - Terminkalender:
 - Gemüts Tagebuch: Drei Screens
+
+Präsentation
+- Scoping & Research (Sabine)
+-> Interview mit Therapeuten, Scoping auf Alkoholiker
+- Persona (Simon)
+- Storyboards (Andre)
+- Prototypen (Jeder seins)
+- Validation (Denis)
+
+Arbeiten:
+Andre: Validation Questoinaire Storyboards (Gemüts-Tagebuch, Notfallknopf, Terminkalender)
+       Präsentation: Storyboards
+Simon: Bisamiq Wireframe für Prototypen
+       Präsentation: Persona
+Denis: Präsentation: Validation
+
+Projektname: Acadia
+Auswahl Logo: Kreis, leicht geöffnet, symbolisch für die Spirale des Wandels
