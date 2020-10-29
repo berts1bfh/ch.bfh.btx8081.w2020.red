@@ -232,3 +232,22 @@ Negative Punkte:Tagebuch- und Kalenderapps gibt es schon, Beim Notfallknopf soll
 
 Termin: 28.10.2020 Präsentationsdürchführung
 Termin: ??.??.???? Nachbesprechung: Validationsergebnisse "mehr Motivation rein?" 
+
+
+
+
+-----Task 2-----
+29.10.2020 13:23 Uhr Meeting, 20minuten
+
+Besprechung des Vorgehens beim Task 2:
+
+Domain Model
+- jeder von uns macht bis Samstag den 31.10. 17:00 ein Domainmodel. 
+     - Dann besprechen wir dieses und wählen das Beste aus/stellen eines zusammen 
+     - Dann beginnen wir mir Sequence Diagram, falls jemand schon Vorarbeiten machen will...
+- Präsentation ist am 11.10., wir wollen aber sie möglichst früh fertig machen, weil manche haben dann sehr strenge Prüfungswoche.
+
+Arbeiten:
+jeder: Domainmodel & ggf. Ideen für Sequenz-Diagramm-Szenario
+
+Termine: Samstag, 17:00 Uhr: Besprechung, Sequence-Modelling
