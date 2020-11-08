@@ -223,14 +223,14 @@ Auswahl Logo: Kreis, leicht geÃ¶ffnet, symbolisch fÃ¼r die Spirale des Wandels
 
 27.10.2020 20:00 Uhr Meeting, 40min
 Besprechung Validation
-Präsentation üben
+Prï¿½sentation ï¿½ben
 
 Validation
-Bis Dienstag 8 Rückmeldungen 7/8 Positiv
-Paar Vorschläge: für Motivationsunterstützung (Memes, Gamification, Zielsetzung und -überprüfung).
-Negative Punkte:Tagebuch- und Kalenderapps gibt es schon, Beim Notfallknopf sollte Therapeut zuletzt anwählbar sein.
+Bis Dienstag 8 Rï¿½ckmeldungen 7/8 Positiv
+Paar Vorschlï¿½ge: fï¿½r Motivationsunterstï¿½tzung (Memes, Gamification, Zielsetzung und -ï¿½berprï¿½fung).
+Negative Punkte:Tagebuch- und Kalenderapps gibt es schon, Beim Notfallknopf sollte Therapeut zuletzt anwï¿½hlbar sein.
 
-Termin: 28.10.2020 Präsentationsdürchführung
+Termin: 28.10.2020 Prï¿½sentationsdï¿½rchfï¿½hrung
 Termin: ??.??.???? Nachbesprechung: Validationsergebnisse "mehr Motivation rein?" 
 
 
@@ -243,11 +243,25 @@ Besprechung des Vorgehens beim Task 2:
 
 Domain Model
 - jeder von uns macht bis Samstag den 31.10. 17:00 ein Domainmodel. 
-     - Dann besprechen wir dieses und wählen das Beste aus/stellen eines zusammen 
+     - Dann besprechen wir dieses und wï¿½hlen das Beste aus/stellen eines zusammen 
      - Dann beginnen wir mir Sequence Diagram, falls jemand schon Vorarbeiten machen will...
-- Präsentation ist am 11.10., wir wollen aber sie möglichst früh fertig machen, weil manche haben dann sehr strenge Prüfungswoche.
+- Prï¿½sentation ist am 11.10., wir wollen aber sie mï¿½glichst frï¿½h fertig machen, weil manche haben dann sehr strenge Prï¿½fungswoche.
 
 Arbeiten:
-jeder: Domainmodel & ggf. Ideen für Sequenz-Diagramm-Szenario
+jeder: Domainmodel & ggf. Ideen fï¿½r Sequenz-Diagramm-Szenario
 
 Termine: Samstag, 17:00 Uhr: Besprechung, Sequence-Modelling
+
+08.11.2020 13:00 Uhr Meeting, 1h 20 Minuten
+
+Besprechung der einzelnen erarbeiteten Sequenz- und weiteren -diagramme.
+Erarbeiten eines gemeinsamen Klassendiagramms, Aufteilen zur Erstellung der PrÃ¤sentation.
+
+Arbeiten: Individuelle Aufteilung zur PrÃ¤sentation.
+
+
+08.11.2020 19:30 Uhr Meeting, 40 Minuten
+
+DurchfÃ¼hren, EinÃ¼ben und finalisieren der PrÃ¤sentation. Besprechung fÃ¼r Vorstellungstermin.
+
+NÃ¤chster Termin Mittwoch, 11.11.2020 14:25 Uhr zur PrÃ¤sentation mit Nachbesprechung im Team fÃ¼r weitere Arbeiten.
