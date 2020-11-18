@@ -252,6 +252,8 @@ jeder: Domainmodel & ggf. Ideen f�r Sequenz-Diagramm-Szenario
 
 Termine: Samstag, 17:00 Uhr: Besprechung, Sequence-Modelling
 
+
+
 08.11.2020 13:00 Uhr Meeting, 1h 20 Minuten
 
 Besprechung der einzelnen erarbeiteten Sequenz- und weiteren -diagramme.
@@ -260,8 +262,38 @@ Erarbeiten eines gemeinsamen Klassendiagramms, Aufteilen zur Erstellung der Prä
 Arbeiten: Individuelle Aufteilung zur Präsentation.
 
 
+
 08.11.2020 19:30 Uhr Meeting, 40 Minuten
 
 Durchführen, Einüben und finalisieren der Präsentation. Besprechung für Vorstellungstermin.
 
 Nächster Termin Mittwoch, 11.11.2020 14:25 Uhr zur Präsentation mit Nachbesprechung im Team für weitere Arbeiten.
+
+
+
+15.11.2020 20:30, 40 Minuten
+
+Besprechung des Vorgehens beim Task 3:
+
+Aufgabenteilung, fertig bis Dienstag 17:30
+UML Component Diagram: 		Simon
+UML Deployement Diagram: 	Sabine
+UML Class Diagram:			Andr� + Denis
+
+Am Montag Zwischenstand in den Chat posten, f�r Abgleich
+
+Termine: Dienstag 17:30, Besprechung und Folien machen.
+
+
+
+
+-----Task 4-----
+12.11.2020
+
+Besprechung Task 4 und Angefangen
+Excel Scrum begonnen.
+
+Weiter nach Task 3.
+
+
+
