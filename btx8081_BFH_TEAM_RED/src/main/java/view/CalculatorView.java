@@ -1,4 +1,4 @@
-package ch.bfh.btx8081;
+package view;
 
 public interface CalculatorView {
 	

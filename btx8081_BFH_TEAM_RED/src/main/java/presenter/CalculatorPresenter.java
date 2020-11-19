@@ -1,6 +1,9 @@
-package ch.bfh.btx8081;
+package presenter;
 
-class CalculatorPresenter implements CalculatorView.CalculatorViewListener {
+import model.CalculatorModel;
+import view.CalculatorView;
+
+public class CalculatorPresenter implements CalculatorView.CalculatorViewListener {
 	private CalculatorModel model;
 	private CalculatorView view;
 	private double current = 0.0;

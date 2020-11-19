@@ -1,4 +1,4 @@
-package ch.bfh.btx8081;
+package model;
 
 public class CalculatorModel {
 	

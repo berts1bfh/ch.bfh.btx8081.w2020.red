@@ -1,8 +1,11 @@
-package ch.bfh.btx8081;
+package view;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
+
+import model.CalculatorModel;
+import presenter.CalculatorPresenter;
 
 /**
  * The main view contains a button and a click listener.
