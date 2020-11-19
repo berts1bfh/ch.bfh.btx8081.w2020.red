@@ -1,7 +1,5 @@
 package ch.bfh.btx8081;
 
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
@@ -11,11 +9,27 @@ import com.vaadin.flow.server.PWA;
  */
 @Route("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
+
 public class MainView extends VerticalLayout {
 
-    public MainView() {
-        Button button = new Button("Click me",
-                event -> Notification.show("Clicked!"));
-        add(button);
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public MainView() {
+        
+    	// Create the model and the Vaadin view implementation
+    	CalculatorModel model = new CalculatorModel();
+    	CalculatorViewImpl view = new CalculatorViewImpl();
+    	// The presenter connects the model and view
+    	new CalculatorPresenter(model, view);
+    	// The view implementation is a Vaadin component
+    	add(view); 
+    	
+    	
+ 
+    	
+    	
     }
 }
