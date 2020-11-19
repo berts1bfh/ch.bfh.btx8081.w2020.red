@@ -52,6 +52,10 @@ public class CalculatorViewImpl extends VerticalLayout  implements CalculatorVie
 	layout_5.add(createButton("="));
 	add(layout_5);
 	
+	HorizontalLayout layout_6 = new HorizontalLayout();
+    layout_6.add(createButton("0"));
+    add(layout_6);
+	
 	}
 	private Button createButton(String operation) {
 	return new Button(operation, event -> {
