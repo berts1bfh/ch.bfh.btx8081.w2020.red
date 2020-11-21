@@ -22,13 +22,14 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 
     public MainView() {
 	
+	//Menu Darstellung
 	VerticalLayout menu = new VerticalLayout();
 	menu.add(new RouterLink("calulator", CalculatorView.class));
 	Anchor anchorWiki = new Anchor("https://wikipedia.com", "Wikipedia");
 	menu.add(anchorWiki);
-	
 	add(menu);
 	
+	//Button Darstellung
 	Button buttonOpenCalculator = new Button("Open Calculator");
 	buttonOpenCalculator.addClickListener(e-> {
 	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("calculator"));
@@ -41,7 +42,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	});
 	add(buttonOpenDiary);
 
-	
 	Button buttonOpenInstructions = new Button("Open Instruction");
 	buttonOpenCalculator.addClickListener(e-> {
 	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("instruction"));
