@@ -8,7 +8,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 
-public class CalculatorViewImpl extends VerticalLayout  implements CalculatorView {
+public class CalculatorViewImpl extends VerticalLayout  implements CalculatorViewInterface {
 	
 	/**
 	 * 

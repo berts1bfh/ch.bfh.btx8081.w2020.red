@@ -1,16 +1,16 @@
 package presenter;
 
 import model.CalculatorModel;
-import view.CalculatorView;
+import view.CalculatorViewInterface;
 
-public class CalculatorPresenter implements CalculatorView.CalculatorViewListener {
+public class CalculatorPresenter implements CalculatorViewInterface.CalculatorViewListener {
 	private CalculatorModel model;
-	private CalculatorView view;
+	private CalculatorViewInterface view;
 	private double current = 0.0;
 
 	private char lastOperationRequested = 'C';
 
-	public CalculatorPresenter(CalculatorModel model, CalculatorView view) {
+	public CalculatorPresenter(CalculatorModel model, CalculatorViewInterface view) {
 	
 		this.model = model; this.view = view;
 	view.setDisplay(current);

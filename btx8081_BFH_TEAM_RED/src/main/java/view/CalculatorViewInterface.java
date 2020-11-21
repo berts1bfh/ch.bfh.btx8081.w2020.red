@@ -1,6 +1,6 @@
 package view;
 
-public interface CalculatorView {
+public interface CalculatorViewInterface {
 	
 	public void setDisplay(double value);
 	
