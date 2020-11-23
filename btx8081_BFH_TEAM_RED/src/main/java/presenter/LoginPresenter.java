@@ -1,6 +1,7 @@
 package presenter;
 
 import model.User;
+import view.LoginViewImpl;
 import view.MainView;
 
 /**
@@ -9,9 +10,10 @@ import view.MainView;
 public class LoginPresenter {
 
     private User user;
-    private MainView view;
+    private LoginViewImpl view;
 
-    public LoginPresenter(MainView view) {
+    public LoginPresenter(User user, LoginViewImpl view) {
+        this.user = user;
         this.view = view;
     }
 
