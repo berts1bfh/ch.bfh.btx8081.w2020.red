@@ -10,7 +10,7 @@ import presenter.LoginPresenter;
 public class LoginView extends VerticalLayout {
 
     public LoginView() {
-        User defaultUser = new User();
+        User defaultUser = new User("Max", "Muster");
         LoginViewImpl view = new LoginViewImpl();
         new LoginPresenter(defaultUser, view);
         add(view);
