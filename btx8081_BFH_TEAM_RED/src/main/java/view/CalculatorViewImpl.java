@@ -18,6 +18,7 @@ public class CalculatorViewImpl extends VerticalLayout  implements CalculatorVie
 
     private TextField display = new TextField(); // shows current result
     private List<CalculatorViewListener> listeners = new ArrayList<CalculatorViewListener>();
+   
     public CalculatorViewImpl() {
 	display.setReadOnly(true);
 	add(display);
