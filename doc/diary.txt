@@ -297,14 +297,43 @@ Weiter nach Task 3.
 
 
 
-
-
-18.11.2020 20:00
+18.11.2020 20:00 Uhr Meeting, 60min
 
 Besprechung Task 4: Backlogs 
 
 Es gab einige Verwirrung Ÿber die Aufgabenstellung der Backlogs, und wir mussten unseren Backlogs bis morgen vorbereiten und prŠsentieren.
 Simon (Scrum Master) organisierte das Treffen. Die Backlogs wurden verteilt und in der Excel-Tabelle SED_ProductPlaningMeeting_scrum_v02 innerhalb der Ordner-Aufgabe 4 gespeichert.
+
+
+
+22.11.2020 19:00 Uhr Meeting, 30min
+
+Besprechung Sprint 1:
+MainView erstellt, muss aber verschöntert werden: Aligment von Button und Textfeld für UserName.
+
+Termine 23.11.2020 19:00 nochmal besprechen.
+
+
+
+23.11.2020 19:00 Uhr Meeting, 60min
+
+Besprechung Sprint 1:
+MainView review: ok
+Probleme bei "Einrichtung der Umgebung" bei Sabine diskutiert. Andre und Sabine versuchen gemeinsam dies zu lösen.
+
+
+
+25.11.2020 16:00 Uhr Meeting: 30min
+Besprechung Sprint 1:
+"Einrichtung der Umgebung" bei allen abgeschlossen.
+André ist dabei eine DB einzurichten, für Instruktionen und User.
+
+Termin 25.11.2020 Review mit Produkt Owner
+
+
+
+
+
 
 
 
