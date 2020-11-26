@@ -338,9 +338,13 @@ Vorbereitung Sprint 2:
 Angefangen zu planen, wird dann mit Prof. Vogel im Review fertig gemacht.
 
 
-26.11.2020 14:00 Uhr Sprint Review mit Product Owner Prof. Vogel
 
-Review Sprint 1:
+26.11.2020 14:00 Uhr Sprint Review mit Product Owner Prof. Vogel: 10min
+
+Review Sprint 1: erledigt
+Sprint2: besprochen
+
+Termin 28.11.20 19:00 Datenbankeinführung mit André
 
 
 
