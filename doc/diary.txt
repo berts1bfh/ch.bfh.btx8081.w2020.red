@@ -342,7 +342,10 @@ Angefangen zu planen, wird dann mit Prof. Vogel im Review fertig gemacht.
 26.11.2020 14:00 Uhr Sprint Review mit Product Owner Prof. Vogel: 10min
 
 Review Sprint 1: erledigt
-Sprint2: besprochen
+Sprint2 besprochen:
+Prof. Vogel:
+- Testing: Kommt noch 2 den nächsten 2 Wochen: Thema Quality-Testing, Vogel: "wir werden uns auf minimales Testing beschränken"
+- Wenn DB noch nicht bereit, können wir mit Dummy-Struktur arbeiten, Klassen die halt Dummy-Daten übergeben oder innehalten.
 
 Termin 28.11.20 19:00 Datenbankeinführung mit André
 
