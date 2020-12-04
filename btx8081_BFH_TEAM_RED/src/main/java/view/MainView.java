@@ -61,24 +61,24 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	});
 
 	Button buttonOpenDiary = new Button("Diary", VaadinIcon.BOOK.create());
-	buttonOpenCalculator.addClickListener(e-> {
-	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("diary"));
+	buttonOpenDiary.addClickListener(e-> {
+	    buttonOpenDiary.getUI().ifPresent(ui -> ui.navigate("diary"));
 	    buttonOpenDiary.setIconAfterText(false);
 	});
 
 	Button buttonOpenInstructions = new Button("Instructions", VaadinIcon.ANCHOR.create());
-	buttonOpenCalculator.addClickListener(e-> {
-	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("instruction"));
+	buttonOpenInstructions.addClickListener(e-> {
+	    buttonOpenInstructions.getUI().ifPresent(ui -> ui.navigate("instruction"));
 	});
 
 	Button buttonOpenEmergency = new Button("Emergency", VaadinIcon.EXCLAMATION_CIRCLE.create());
-	buttonOpenCalculator.addClickListener(e-> {
-	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("emergency"));
+	buttonOpenEmergency.addClickListener(e-> {
+	    buttonOpenEmergency.getUI().ifPresent(ui -> ui.navigate("emergency"));
 	});
 	
 	Button buttonOpenContacts = new Button("Contacts", VaadinIcon.USERS.create());
-	buttonOpenCalculator.addClickListener(e-> {
-	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("contacts"));
+	buttonOpenContacts.addClickListener(e-> {
+	    buttonOpenContacts.getUI().ifPresent(ui -> ui.navigate("contacts"));
 	});
 
 	buttonOpenCalculator.setIconAfterText(true);
