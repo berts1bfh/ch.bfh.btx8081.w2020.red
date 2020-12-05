@@ -10,11 +10,7 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class CalculatorViewImpl extends VerticalLayout  implements CalculatorViewInterface {
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
-
 
     private TextField display = new TextField(); // shows current result
     private List<CalculatorViewListener> listeners = new ArrayList<CalculatorViewListener>();
@@ -58,6 +54,7 @@ public class CalculatorViewImpl extends VerticalLayout  implements CalculatorVie
 	add(layout_6);
 
     }
+    
     private Button createButton(String operation) {
 	return new Button(operation, event -> {
 	    for (CalculatorViewListener listener : listeners)

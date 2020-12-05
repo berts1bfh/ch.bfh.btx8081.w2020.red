@@ -11,7 +11,6 @@ public class CalculatorView extends VerticalLayout {
 
     public CalculatorView() {
 
-
 	CalculatorModel model = new CalculatorModel();
 	CalculatorViewImpl view = new CalculatorViewImpl();
 
@@ -19,5 +18,4 @@ public class CalculatorView extends VerticalLayout {
 
 	add(view); 
     }
-
 }

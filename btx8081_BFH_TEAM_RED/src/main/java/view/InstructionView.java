@@ -17,10 +17,10 @@ public class InstructionView  extends VerticalLayout{
     public InstructionView() {
 	
 	
-	//TODO: InstructionModel model = new InstructionModel();
 	InstructionViewImpl view = new InstructionViewImpl();
+	//TODO: InstructionModel model = new InstructionModel(); //fehlt noch Model
 	
-	//TODO: new InstructionPresenter(model, view);
+	//TODO: new InstructionPresenter(model, view); // fehlt noch Model
 
 	VerticalLayout v1 = new VerticalLayout();
 	VerticalLayout v2 = new VerticalLayout();
@@ -31,12 +31,12 @@ public class InstructionView  extends VerticalLayout{
 	v1.add(v2); 
 	add(v1);
 	
-	Button buttonOpenInstrictionAddView = new Button("bearbeiten", VaadinIcon.EDIT.create());
-	buttonOpenInstrictionAddView.addClickListener(e-> {
-	    buttonOpenInstrictionAddView.getUI().ifPresent(ui -> ui.navigate("InstructionMgmtView"));
-	    buttonOpenInstrictionAddView.setIconAfterText(false);
+	Button buttonOpenInstructionMgmtView = new Button("bearbeiten", VaadinIcon.EDIT.create());
+	buttonOpenInstructionMgmtView.addClickListener(e-> {
+	    buttonOpenInstructionMgmtView.getUI().ifPresent(ui -> ui.navigate("InstructionMgmtView"));
+	    buttonOpenInstructionMgmtView.setIconAfterText(false);
 	});
-	add(buttonOpenInstrictionAddView);
+	add(buttonOpenInstructionMgmtView);
 	
     }
 
