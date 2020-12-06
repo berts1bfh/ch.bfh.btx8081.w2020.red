@@ -28,6 +28,7 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 
     public MainView() {
 	
+	//TODO löschen wenn nicht gebraucht, dmo
 	/* 
 	//Menu als alternative Darstellung, LOESCHEN am Schluss, wenn nicht gebraucht.
 	VerticalLayout menu = new VerticalLayout();

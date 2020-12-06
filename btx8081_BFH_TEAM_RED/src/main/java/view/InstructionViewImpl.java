@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 
 
-public class InstructionViewImpl extends VerticalLayout {
+public class InstructionViewImpl extends VerticalLayout implements InstructionViewInterface {
     Accordion accordion = new Accordion();
     ArrayList<ArrayList<String>> instructionList = new ArrayList<ArrayList<String>>();
 
@@ -54,6 +54,13 @@ public class InstructionViewImpl extends VerticalLayout {
 	    .addThemeVariants(DetailsVariant.SMALL);
 	    this.add(accordion);         
 	}
+    }
+
+
+    @Override
+    public void setInstructions(ArrayList<ArrayList<String>> instructionList) {
+	// TODO Auto-generated method stub
+	
     }
 }
 
