@@ -22,15 +22,16 @@ import model.User;
 
 @Route("InstructionMgmtView")
 public class InstructionMgmtView  extends VerticalLayout{//implements InstructionViewInterface{
+    //TODO : 2D-Array nicht brauchen hier: passt konzeptionell hier nicht, nicht so wie in InstructionView
     //ArrayList<ArrayList<String>> localInstructionList;
-   // ArrayList<ArrayList<String>> instructionList = new  ArrayList<ArrayList<String>>(localInstructionList);
+    // ArrayList<ArrayList<String>> instructionList = new  ArrayList<ArrayList<String>>(localInstructionList);
 
-
+    //TODO: alle User mit Instruktionen-Klasse ersetzen, welche die Instruktionen hat.
 
 
     public InstructionMgmtView() {
 
-//TODO: alle User mit Instruktionen-Klasse ersetzen, welche die Instruktionen hat.
+	//TODO: Hardcodierte Test löschen
 	List<User> userList = new ArrayList<>();
 	userList.add(new User("Hansi" , "Leimbauer"));
 	userList.add(new User("Emanuel", "Rund"));
@@ -48,14 +49,14 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 
 	/*
 	 * https://vaadin.com/components/vaadin-grid/java-examples
-	 * ist fast gleiches wie oben, aber nur rest ab Binder<User> übernommem: 
+	 * ist fast gleiches wie oben, aber nur Rest ab Binder<User> binder = new Binder<>(User.class); übernommem: 
 	Grid<Person> grid = new Grid<>();
 	List<Person> persons = getItems();
 	grid.setItems(persons);
 	Grid.Column<Person> firstNameColumn = grid.addColumn(Person::getFirstName).setHeader("First Name");
 	Grid.Column<Person> ageColumn = grid.addColumn(Person::getAge).setHeader("Age");
 
-*/
+	 */
 	Binder<User> binder = new Binder<>(User.class);
 	Editor<User> editor = grid.getEditor();
 	editor.setBinder(binder);
@@ -64,33 +65,34 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	Div validationStatus = new Div();
 	validationStatus.setId("validation");
 
-/*
-	 // hier wird wohl der Textfield zur Änderung der Instruktion gemacht. 
+	/*
+	 // TODO Wie kann ich Textfeld öffnen zur Bearbeitung von Instruktionen?
+	 * Hier wird wohl der Textfield zur Änderung der Instruktion gemacht. 
 	  //Probleme:  Bean Handler User Exception?
 	TextField firstNameField = new TextField();
 	binder.forField(firstNameField)
 	        .withValidator(new StringLengthValidator("First name length must be between 3 and 50.", 3, 50))
 	        .withStatusLabel(validationStatus).bind("firstName");
 	titelColumn.setEditorComponent(firstNameField);
-*/
-/*
+	 */
+	/*
 	TextField ageField = new TextField();
 	binder.forField(ageField)
 	        .withConverter(
 	                new StringToIntegerConverter("Age must be a number."))
 	        .withStatusLabel(validationStatus).bind("age");
 	textColumn.setEditorComponent(ageField);
-*/
-	
+	 */
+
 	Collection<Button> editButtons = Collections
-	        .newSetFromMap(new WeakHashMap<>());
+		.newSetFromMap(new WeakHashMap<>());
 
 	Grid.Column<User> editorColumn = grid.addComponentColumn(person -> {
 	    Button edit = new Button("Edit");
 	    edit.addClassName("edit");
 	    edit.addClickListener(e -> {
-	        editor.editItem(person);
-	       // firstNameField.focus();
+		editor.editItem(person);
+		//  firstNameField.focus();
 	    });
 	    edit.setEnabled(!editor.isOpen());
 	    editButtons.add(edit);
@@ -98,9 +100,9 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	});
 
 	editor.addOpenListener(e -> editButtons.stream()
-	        .forEach(button -> button.setEnabled(!editor.isOpen())));
+		.forEach(button -> button.setEnabled(!editor.isOpen())));
 	editor.addCloseListener(e -> editButtons.stream()
-	        .forEach(button -> button.setEnabled(!editor.isOpen())));
+		.forEach(button -> button.setEnabled(!editor.isOpen())));
 
 	Button save = new Button("Save", e -> editor.save());
 	save.addClassName("save");
@@ -111,7 +113,7 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	// Add a keypress listener that listens for an escape key up event.
 	// Note! some browsers return key as Escape and some as Esc
 	grid.getElement().addEventListener("keyup", event -> editor.cancel())
-	        .setFilter("event.key === 'Escape' || event.key === 'Esc'");
+	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
 	Div buttons = new Div(save, cancel);
 	editorColumn.setEditorComponent(buttons);
@@ -120,10 +122,10 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	Label message = new Label("-");
 
 	editor.addSaveListener(
-	        event -> message.setText(event.getItem().toString() + ", "
-	                + event.getItem().toString()));
+		event -> message.setText(event.getItem().toString() + ", "
+			+ event.getItem().toString()));
 	add(validationStatus, grid);
-	
+
     }
 }
 

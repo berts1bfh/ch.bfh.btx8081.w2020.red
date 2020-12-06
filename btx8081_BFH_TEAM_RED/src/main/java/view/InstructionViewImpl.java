@@ -16,17 +16,15 @@ public class InstructionViewImpl extends VerticalLayout implements InstructionVi
 
     public InstructionViewImpl() {
 
-	//hartcodierte Test:
-	/*
+	
 	ArrayList<String> eintrag1 = new ArrayList<String>();
 	eintrag1.add("this should be title1");
 	eintrag1.add("this should be text1");
 	ArrayList<String> eintrag2 = new ArrayList<String>();
 	eintrag2.add("this should be title2");
 	eintrag2.add("this should be text2");
-	tupelFromDB.add(eintrag1);
-	tupelFromDB.add(eintrag2);
-	*/
+	instructionList.add(eintrag1);
+	instructionList.add(eintrag2);
 	
 	
 	if (instructionList.size() > 0) {
