@@ -1,23 +1,16 @@
 package view;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.WeakHashMap;
-
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.charts.model.Label;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.editor.Editor;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.converter.StringToIntegerConverter;
-import com.vaadin.flow.data.validator.StringLengthValidator;
 import com.vaadin.flow.router.Route;
 import model.User;
+
+import java.util.*;
 
 
 @Route("InstructionMgmtView")
