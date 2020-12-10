@@ -16,7 +16,7 @@ public class InstructionViewImpl extends VerticalLayout implements InstructionVi
 
     public InstructionViewImpl() {
 
-	
+	//TODO: hardcoded test löschen
 	ArrayList<String> eintrag1 = new ArrayList<String>();
 	eintrag1.add("this should be title1");
 	eintrag1.add("this should be text1");
