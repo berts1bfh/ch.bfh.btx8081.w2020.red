@@ -48,9 +48,9 @@ public class instructionModel<InstruktionSql> {
 	}
 
 	public void saveToDB() {
-		
+		//TODO für InstructionMgmt
 	}
-	public void 
+	
 	public String getInstructionTitle() {
 		return instructionTitle;
 	}
