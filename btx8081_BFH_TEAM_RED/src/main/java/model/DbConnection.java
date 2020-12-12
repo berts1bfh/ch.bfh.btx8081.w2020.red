@@ -8,12 +8,14 @@ import java.sql.SQLException;
  * Makes DB Connection
  */
 public class DbConnection {
-	
+
+	public static final String DB_URL = "jdbc:sqlite:src/acadiaDB.db";
+
 	public static Connection connect() {
 		Connection connection = null;
 		try {
 			Class.forName("org.sqlite.JDBC");
-			connection = DriverManager.getConnection("jdbc:sqlite:src/acadiaDB.db");
+			connection = DriverManager.getConnection(DB_URL);
 			connection.setAutoCommit(false);																				// database
 			System.out.println("Connected!");
 		} catch (ClassNotFoundException | SQLException e) {

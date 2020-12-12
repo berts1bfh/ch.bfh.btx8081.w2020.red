@@ -1,6 +1,6 @@
 package presenter;
 
-import view.InstructionView;
+import model.InstructionModel;
 import view.InstructionViewInterface;
 
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class InstructionPresenter {
 
-    // InstructionModel model;
+    ArrayList<InstructionModel> models;
     InstructionViewInterface view;
 
     /**
@@ -18,6 +18,7 @@ public class InstructionPresenter {
      * @param view InstructionViewInterface
      */
     public InstructionPresenter(InstructionViewInterface view) {
+        this.models = InstructionModel.getInstructionsFromDB();
         this.view = view;
     }
 
@@ -26,15 +27,13 @@ public class InstructionPresenter {
      * @return ArrayList<> of instructions
      */
     private ArrayList<ArrayList<String>> getInstructions() {
-        // get from model, return
-        return new ArrayList<>();
-    }
-
-    /**
-     * Sets instructions from InstructionModel on InstructionView
-     */
-    public void setInstructions() {
-        ArrayList<ArrayList<String>> instructions = getInstructions();
-        view.setInstructions(instructions);
+        ArrayList<ArrayList<String>> instructions = new ArrayList<>();
+        for (InstructionModel model : models) {
+            ArrayList<String> instruction = new ArrayList<>();
+            instruction.add(model.getTitle());
+            instruction.add(model.getText());
+            instructions.add(instruction);
+        }
+        return instructions;
     }
 }

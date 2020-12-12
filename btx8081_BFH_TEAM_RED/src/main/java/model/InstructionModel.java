@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class InstructionModel {
 
@@ -8,15 +9,49 @@ public class InstructionModel {
 	private String title;
 	private String text;
 
-	public Connection connection = DbConnection.connect();
+	public static Connection connection = DbConnection.connect();
 	
 	public InstructionModel(int id, String title, String text) {
 		this.id = id;
 		this.title = title;
 		this.text = text;
 	}
+
+	public static ArrayList<InstructionModel> getInstructionsFromDB() {
+		ArrayList<InstructionModel> models = new ArrayList<>();
+
+		try {
+			Statement instruction_text = connection.createStatement();
+			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
+			// complete the query
+			connection.setAutoCommit(false); // accordingly
+
+			while (rs.next()) {
+
+				int inst_ID = rs.getInt("inst_id");
+				String instruction = rs.getString("instruktion");
+				String inst_titel = rs.getString("inst_Titel");
+				models.add(new InstructionModel(inst_ID, inst_titel, instruction));
+
+				// print instruction table
+				System.out.println("ID: " + inst_ID);
+				System.out.println("Titel: " + inst_titel);
+				System.out.println("instruction: " + instruction);
+
+				// instruction_text.close();
+
+			}
+			connection.commit();
+			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return models;
+	}
 	
 	public void saveToDB() {
+		// TODO: Inst_id should be auto-increment!
 		String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
 		try {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
