@@ -2,44 +2,47 @@ package model;
 
 import java.sql.*;
 
-public class InstructionModel {
-
-	private int id;
-	private String title;
-	private String text;
+/**
+ * Reference Model for InstructionModel
+ * InstructionModel replaces InstructionModelSql
+ */
+public class InstructionModelSql {
 
 	public Connection connection = DbConnection.connect();
-	
-	public InstructionModel(int id, String title, String text) {
-		this.id = id;
-		this.title = title;
-		this.text = text;
-	}
-	
-	public void saveToDB() {
+
+	private int instID;
+	private String instText;
+	private String instTitel;
+
+	public void insertInstruktion() {
+
 		String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
+
 		try {
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 
-			pstmt.setInt(1, id);
-			pstmt.setString(2, text);
-			pstmt.setString(3, title);
+			pstmt.setInt(1, instID);
+			pstmt.setString(2, instText);
+			pstmt.setString(3, instTitel);
 
 			pstmt.executeUpdate();
 
-			connection.commit();
-			connection.close();
+			// pstmt.close();
+			// con.commit();
+			// con.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
-	
-	public void getFromDB() {
+
+	public void showInstruction() {
 		try {
+
 			Statement instruction_text = connection.createStatement();
 			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
-			// complete the query
+																							// complete the query
 			connection.setAutoCommit(false); // accordingly
 
 			while (rs.next()) {
@@ -60,21 +63,23 @@ public class InstructionModel {
 			connection.close();
 
 		} catch (SQLException e) {
+
 			e.printStackTrace();
 		}
+
 	}
-	
-	public void updateInDB() {
+
+	public void editInstruction(int ID, String newText) {
+
 		try {
+
 			Statement instruction_text = connection.createStatement();
 
-			String sql = "update instruktionen set instruktion = " + text
-					+ " where inst_id =" + id + ";"; // Kein Update für Titel?
+			String sql = "update instruktionen set instruktion = " + newText + " where inst_id =" + ID + ";";
 			instruction_text.executeUpdate(sql);
 			connection.setAutoCommit(false);
 
-			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"
-					+ " where inst_id =" + id + ";");
+			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen where inst_id =" + ID + ";");
 			int inst_ID = rs.getInt("inst_id");
 			String instruction = rs.getString("instruktion");
 			String titel = rs.getString("inst_Titel");
@@ -91,13 +96,14 @@ public class InstructionModel {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
-	
-	public void deleteFromDB() {
+
+	public void deleteInstruction(int ID) {
 		try {
 			Statement instruction_text = connection.createStatement();
 
-			String sql = "DELETE from INSTRUKTIONEN WHERE inst_id=" + id + ";";
+			String sql = "DELETE from INSTRUKTIONEN WHERE inst_id=" + ID + ";";
 			instruction_text.executeUpdate(sql);
 
 			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen");
@@ -118,32 +124,44 @@ public class InstructionModel {
 			connection.close();
 
 		} catch (SQLException e) {
+
 			e.printStackTrace();
 		}
 
-		id = 0;
-		text = null;
-		title = null;
-	}
-	
-	public String getTitle() {
-		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public int getInstID() {
+		return instID;
 	}
 
-	public String getText() {
-		return text;
+	public void setInstID(int instID) {
+		this.instID = instID;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public String getInstText() {
+		return instText;
 	}
 
-	@Override
-	public String toString() {
-		return "instructionModel [instructionTitle=" + title + ", instructionText=" + text + "]";
+	public void setInstText(String instText) {
+		this.instText = instText;
+	}
+
+	public String getInstTitel() {
+		return instTitel;
+	}
+
+	public void setInstTitel(String instTitel) {
+		this.instTitel = instTitel;
+	}
+
+	public InstructionModelSql(int instID, String instText, String instTitel) {
+		this.instID = instID;
+		this.instText = instText;
+		this.instTitel = instTitel;
+
+	}
+
+	public InstructionModelSql() {
+
 	}
 }
