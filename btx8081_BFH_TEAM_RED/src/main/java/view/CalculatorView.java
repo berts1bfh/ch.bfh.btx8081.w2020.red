@@ -10,12 +10,9 @@ import presenter.CalculatorPresenter;
 public class CalculatorView extends VerticalLayout {
 
     public CalculatorView() {
-
-	CalculatorModel model = new CalculatorModel();
-	CalculatorViewImpl view = new CalculatorViewImpl();
-
-	new CalculatorPresenter(model, view);
-
-	add(view); 
+    	CalculatorModel model = new CalculatorModel();
+		CalculatorViewImpl view = new CalculatorViewImpl();
+		new CalculatorPresenter(model, view);
+		add(view);
     }
 }

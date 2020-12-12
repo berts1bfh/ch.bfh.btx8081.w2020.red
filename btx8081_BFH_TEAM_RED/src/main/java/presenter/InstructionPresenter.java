@@ -26,7 +26,7 @@ public class InstructionPresenter {
      * Returns instruction data as an ArrayList from InstructionModel
      * @return ArrayList<> of instructions
      */
-    private ArrayList<ArrayList<String>> getInstructions() {
+    public ArrayList<ArrayList<String>> getInstructions() {
         ArrayList<ArrayList<String>> instructions = new ArrayList<>();
         for (InstructionModel model : models) {
             ArrayList<String> instruction = new ArrayList<>();

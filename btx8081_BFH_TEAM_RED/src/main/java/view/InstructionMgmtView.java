@@ -21,22 +21,20 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 
     //TODO: alle User mit Instruktionen-Klasse ersetzen, welche die Instruktionen hat.
 
-
     public InstructionMgmtView() {
+    	//TODO: Hardcodierte Test löschen
+		List<User> userList = new ArrayList<>();
+		userList.add(new User("Hansi" , "Leimbauer"));
+		userList.add(new User("Emanuel", "Rund"));
 
-	//TODO: Hardcodierte Test löschen
-	List<User> userList = new ArrayList<>();
-	userList.add(new User("Hansi" , "Leimbauer"));
-	userList.add(new User("Emanuel", "Rund"));
+		//Tabelle mit Spalten.
+		//https://vaadin.com/docs/flow/components/tutorial-flow-grid.html
+		Grid<User> grid = new Grid<>();
+		grid.setItems(userList);
+		Grid.Column<User> titelColumn = grid.addColumn(User::toString).setHeader("Instruktion Titel");
+		Grid.Column<User> textColumn = grid.addColumn(User::toString).setHeader("Instruktion Text");
 
-	//Tabelle mit Spalten.  
-	//https://vaadin.com/docs/flow/components/tutorial-flow-grid.html
-	Grid<User> grid = new Grid<>();
-	grid.setItems(userList);
-	Grid.Column<User> titelColumn = grid.addColumn(User::toString).setHeader("Instruktion Titel");
-	Grid.Column<User> textColumn = grid.addColumn(User::toString).setHeader("Instruktion Text");
-
-	add(grid);
+		add(grid);
 
 
 
@@ -50,13 +48,13 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	Grid.Column<Person> ageColumn = grid.addColumn(Person::getAge).setHeader("Age");
 
 	 */
-	Binder<User> binder = new Binder<>(User.class);
-	Editor<User> editor = grid.getEditor();
-	editor.setBinder(binder);
-	editor.setBuffered(true);
+		Binder<User> binder = new Binder<>(User.class);
+		Editor<User> editor = grid.getEditor();
+		editor.setBinder(binder);
+		editor.setBuffered(true);
 
-	Div validationStatus = new Div();
-	validationStatus.setId("validation");
+		Div validationStatus = new Div();
+		validationStatus.setId("validation");
 
 	/*
 	 // TODO Wie kann ich Textfeld öffnen zur Bearbeitung von Instruktionen?
@@ -77,48 +75,47 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	textColumn.setEditorComponent(ageField);
 	 */
 
-	Collection<Button> editButtons = Collections
-		.newSetFromMap(new WeakHashMap<>());
+		Collection<Button> editButtons = Collections
+			.newSetFromMap(new WeakHashMap<>());
 
-	Grid.Column<User> editorColumn = grid.addComponentColumn(person -> {
-	    Button edit = new Button("Edit");
-	    edit.addClassName("edit");
-	    edit.addClickListener(e -> {
-		editor.editItem(person);
-		//  firstNameField.focus();
-	    });
-	    edit.setEnabled(!editor.isOpen());
-	    editButtons.add(edit);
-	    return edit;
-	});
+		Grid.Column<User> editorColumn = grid.addComponentColumn(person -> {
+	    	Button edit = new Button("Edit");
+	    	edit.addClassName("edit");
+	    	edit.addClickListener(e -> {
+				editor.editItem(person);
+				//  firstNameField.focus();
+	    	});
+	    	edit.setEnabled(!editor.isOpen());
+	    	editButtons.add(edit);
+	    	return edit;
+		});
 
-	editor.addOpenListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
-	editor.addCloseListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
+		editor.addOpenListener(e -> editButtons.stream()
+			.forEach(button -> button.setEnabled(!editor.isOpen())));
+		editor.addCloseListener(e -> editButtons.stream()
+			.forEach(button -> button.setEnabled(!editor.isOpen())));
 
-	Button save = new Button("Save", e -> editor.save());
-	save.addClassName("save");
+		Button save = new Button("Save", e -> editor.save());
+		save.addClassName("save");
 
-	Button cancel = new Button("Cancel", e -> editor.cancel());
-	cancel.addClassName("cancel");
+		Button cancel = new Button("Cancel", e -> editor.cancel());
+		cancel.addClassName("cancel");
 
-	// Add a keypress listener that listens for an escape key up event.
-	// Note! some browsers return key as Escape and some as Esc
-	grid.getElement().addEventListener("keyup", event -> editor.cancel())
-	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
+		// Add a keypress listener that listens for an escape key up event.
+		// Note! some browsers return key as Escape and some as Esc
+		grid.getElement().addEventListener("keyup", event -> editor.cancel())
+			.setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
-	Div buttons = new Div(save, cancel);
-	editorColumn.setEditorComponent(buttons);
+		Div buttons = new Div(save, cancel);
+		editorColumn.setEditorComponent(buttons);
 
-	//try and error: wegen message
-	Label message = new Label("-");
+		//try and error: wegen message
+		Label message = new Label("-");
 
-	editor.addSaveListener(
-		event -> message.setText(event.getItem().toString() + ", "
-			+ event.getItem().toString()));
-	add(validationStatus, grid);
-
+		editor.addSaveListener(
+			event -> message.setText(event.getItem().toString() + ", "
+				+ event.getItem().toString()));
+		add(validationStatus, grid);
     }
 }
 

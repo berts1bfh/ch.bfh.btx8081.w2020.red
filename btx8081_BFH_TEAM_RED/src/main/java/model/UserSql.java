@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Reference / template Model for User
+ * User may replace this later on
+ */
 public class UserSql {
 	public Connection connection = DbConnection.connect();
 

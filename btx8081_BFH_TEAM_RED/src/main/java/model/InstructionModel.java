@@ -3,6 +3,9 @@ package model;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * InstructionModel contains and loads Instructions
+ */
 public class InstructionModel {
 
 	private int id;
@@ -17,6 +20,10 @@ public class InstructionModel {
 		this.text = text;
 	}
 
+	/**
+	 * Returns InstructionModel for each instruction found in DB
+	 * @return ArrayList<InstructionModel> of all instructions in DB
+	 */
 	public static ArrayList<InstructionModel> getInstructionsFromDB() {
 		ArrayList<InstructionModel> models = new ArrayList<>();
 
@@ -49,7 +56,10 @@ public class InstructionModel {
 		}
 		return models;
 	}
-	
+
+	/**
+	 * Saves instruction to DB
+	 */
 	public void saveToDB() {
 		// TODO: Inst_id should be auto-increment!
 		String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
@@ -69,7 +79,10 @@ public class InstructionModel {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Loads / gets the data for instruction with id from the DB
+	 */
 	public void getFromDB() {
 		try {
 			Statement instruction_text = connection.createStatement();
@@ -98,7 +111,10 @@ public class InstructionModel {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * Updates entry for current instruction in the DB
+	 */
 	public void updateInDB() {
 		try {
 			Statement instruction_text = connection.createStatement();
@@ -179,6 +195,6 @@ public class InstructionModel {
 
 	@Override
 	public String toString() {
-		return "instructionModel [instructionTitle=" + title + ", instructionText=" + text + "]";
+		return "InstructionModel [id=" + id + ", title=" + title + ", text=" + text + "]";
 	}
 }
