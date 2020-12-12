@@ -23,6 +23,7 @@ public class UserSql {
 		String sql = "INSERT INTO user(id,first_name,last_Name,gbDatum,password) VALUES(?,?,?,?,?)";
 
 		try {
+			connection = DbConnection.connect();
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 
 			pstmt.setInt(1, userId);

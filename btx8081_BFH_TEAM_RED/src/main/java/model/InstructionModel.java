@@ -26,8 +26,8 @@ public class InstructionModel {
 	 */
 	public static ArrayList<InstructionModel> getInstructionsFromDB() {
 		ArrayList<InstructionModel> models = new ArrayList<>();
-
 		try {
+			connection = DbConnection.connect();
 			Statement instruction_text = connection.createStatement();
 			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
 			// complete the query
@@ -50,7 +50,6 @@ public class InstructionModel {
 			}
 			connection.commit();
 			connection.close();
-
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -64,6 +63,7 @@ public class InstructionModel {
 		// TODO: Inst_id should be auto-increment!
 		String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
 		try {
+			connection = DbConnection.connect();
 			PreparedStatement pstmt = connection.prepareStatement(sql);
 
 			pstmt.setInt(1, id);
@@ -85,6 +85,7 @@ public class InstructionModel {
 	 */
 	public void getFromDB() {
 		try {
+			connection = DbConnection.connect();
 			Statement instruction_text = connection.createStatement();
 			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
 			// complete the query
@@ -117,6 +118,7 @@ public class InstructionModel {
 	 */
 	public void updateInDB() {
 		try {
+			connection = DbConnection.connect();
 			Statement instruction_text = connection.createStatement();
 
 			String sql = "update instruktionen set instruktion = " + text
@@ -146,6 +148,7 @@ public class InstructionModel {
 	
 	public void deleteFromDB() {
 		try {
+			connection = DbConnection.connect();
 			Statement instruction_text = connection.createStatement();
 
 			String sql = "DELETE from INSTRUKTIONEN WHERE inst_id=" + id + ";";
