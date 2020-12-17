@@ -278,9 +278,9 @@ Besprechung des Vorgehens beim Task 3:
 Aufgabenteilung, fertig bis Dienstag 17:30
 UML Component Diagram: 		Simon
 UML Deployement Diagram: 	Sabine
-UML Class Diagram:			André + Denis
+UML Class Diagram:			Andrï¿½ + Denis
 
-Am Montag Zwischenstand in den Chat posten, für Abgleich
+Am Montag Zwischenstand in den Chat posten, fï¿½r Abgleich
 
 Termine: Dienstag 17:30, Besprechung und Folien machen.
 
@@ -301,7 +301,7 @@ Weiter nach Task 3.
 
 Besprechung Task 4: Backlogs 
 
-Es gab einige Verwirrung Ÿber die Aufgabenstellung der Backlogs, und wir mussten unseren Backlogs bis morgen vorbereiten und prŠsentieren.
+Es gab einige Verwirrung ï¿½ber die Aufgabenstellung der Backlogs, und wir mussten unseren Backlogs bis morgen vorbereiten und prï¿½sentieren.
 Simon (Scrum Master) organisierte das Treffen. Die Backlogs wurden verteilt und in der Excel-Tabelle SED_ProductPlaningMeeting_scrum_v02 innerhalb der Ordner-Aufgabe 4 gespeichert.
 
 
@@ -309,7 +309,7 @@ Simon (Scrum Master) organisierte das Treffen. Die Backlogs wurden verteilt und 
 22.11.2020 19:00 Uhr Meeting, 30min
 
 Besprechung Sprint 1:
-MainView erstellt, muss aber verschöntert werden: Aligment von Button und Textfeld für UserName.
+MainView erstellt, muss aber verschï¿½ntert werden: Aligment von Button und Textfeld fï¿½r UserName.
 
 Termine 23.11.2020 19:00 nochmal besprechen.
 
@@ -319,14 +319,14 @@ Termine 23.11.2020 19:00 nochmal besprechen.
 
 Besprechung Sprint 1:
 MainView review: ok
-Probleme bei "Einrichtung der Umgebung" bei Sabine diskutiert. Andre und Sabine versuchen gemeinsam dies zu lösen.
+Probleme bei "Einrichtung der Umgebung" bei Sabine diskutiert. Andre und Sabine versuchen gemeinsam dies zu lï¿½sen.
 
 
 
 25.11.2020 16:00 Uhr Meeting: 30min
 Besprechung Sprint 1:
 "Einrichtung der Umgebung" bei allen abgeschlossen.
-André ist dabei eine DB einzurichten, für Instruktionen und User.
+Andrï¿½ ist dabei eine DB einzurichten, fï¿½r Instruktionen und User.
 
 Termin 25.11.2020 Review mit Produkt Owner
 
@@ -344,10 +344,21 @@ Angefangen zu planen, wird dann mit Prof. Vogel im Review fertig gemacht.
 Review Sprint 1: erledigt
 Sprint2 besprochen:
 Prof. Vogel:
-- Testing: Kommt noch 2 den nächsten 2 Wochen: Thema Quality-Testing, Vogel: "wir werden uns auf minimales Testing beschränken"
-- Wenn DB noch nicht bereit, können wir mit Dummy-Struktur arbeiten, Klassen die halt Dummy-Daten übergeben oder innehalten.
+- Testing: Kommt noch 2 den nï¿½chsten 2 Wochen: Thema Quality-Testing, Vogel: "wir werden uns auf minimales Testing beschrï¿½nken"
+- Wenn DB noch nicht bereit, kï¿½nnen wir mit Dummy-Struktur arbeiten, Klassen die halt Dummy-Daten ï¿½bergeben oder innehalten.
 
-Termin 28.11.20 19:00 Datenbankeinführung mit André
+Termin 28.11.20 19:00 Datenbankeinfï¿½hrung mit Andrï¿½
+
+
+10.12.2020 16.20
+SQLite Datenbank wurde installiert und gegenseitiges Update wer, woran arbeitet und was noch ansteht. 
+Gemeinsames Ziel die Funktion Instruktion ans laufen zu bringen. 
+nÃ¤chster Termin 12.12.2020 um 14 Uhr
+
+12.12.2020
+Simon hat das Programm zusammengefÃ¼gt, wir hatten noch einen Bug mit der connection zu DB, den wir gefixt haben. 
+Danach haben wir das UML Diagramm erstellt und Herr Vogel gemailt. 
+NÃ¤chster Termin 17.12.20 zum Sprint Review mit Herr Vogel
 
 
 
