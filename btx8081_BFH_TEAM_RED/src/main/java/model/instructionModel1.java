@@ -1,4 +1,4 @@
-package main.java.model;
+/*package main.java.model;
 
 
 
@@ -69,3 +69,4 @@ public class instructionModel1 implements DB {
 	
 	
 }
+*/
