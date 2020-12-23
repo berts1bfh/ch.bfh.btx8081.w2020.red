@@ -1,4 +1,4 @@
-package view;
+package view.calculator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,8 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+
+import view.calculator.CalculatorViewInterface.CalculatorViewListener;
 
 public class CalculatorViewImpl extends VerticalLayout  implements CalculatorViewInterface {
 

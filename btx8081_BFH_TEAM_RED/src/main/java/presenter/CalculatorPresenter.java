@@ -1,7 +1,7 @@
 package presenter;
 
 import model.CalculatorModel;
-import view.CalculatorViewInterface;
+import view.calculator.CalculatorViewInterface;
 
 public class CalculatorPresenter implements CalculatorViewInterface.CalculatorViewListener {
 	private CalculatorModel model;
