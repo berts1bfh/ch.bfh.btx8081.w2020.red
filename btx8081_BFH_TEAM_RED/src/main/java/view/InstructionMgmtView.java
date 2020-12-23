@@ -3,119 +3,108 @@ package view;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.charts.model.Label;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.Grid.Column;
 import com.vaadin.flow.component.grid.editor.Editor;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
+import com.vaadin.flow.data.validator.StringLengthValidator;
 import com.vaadin.flow.router.Route;
-import model.User;
+
+import model.InstructionModel;
+
 
 import java.util.*;
 
 
 @Route("InstructionMgmtView")
 public class InstructionMgmtView  extends VerticalLayout{//implements InstructionViewInterface{
-    //TODO : 2D-Array nicht brauchen hier: passt konzeptionell hier nicht, nicht so wie in InstructionView
-    //ArrayList<ArrayList<String>> localInstructionList;
-    // ArrayList<ArrayList<String>> instructionList = new  ArrayList<ArrayList<String>>(localInstructionList);
-
-    //TODO: alle User mit Instruktionen-Klasse ersetzen, welche die Instruktionen hat.
 
     public InstructionMgmtView() {
-    	//TODO: Hardcodierte Test löschen
-		List<User> userList = new ArrayList<>();
-		userList.add(new User("Hansi" , "Leimbauer"));
-		userList.add(new User("Emanuel", "Rund"));
 
-		//Tabelle mit Spalten.
-		//https://vaadin.com/docs/flow/components/tutorial-flow-grid.html
-		Grid<User> grid = new Grid<>();
-		grid.setItems(userList);
-		Grid.Column<User> titelColumn = grid.addColumn(User::toString).setHeader("Instruktion Titel");
-		Grid.Column<User> textColumn = grid.addColumn(User::toString).setHeader("Instruktion Text");
+	
+	//Diese 3 Zeilen gemacht für Test.
+	ArrayList<InstructionModel> instructionsTestList = new ArrayList<>();
+	instructionsTestList.add(new InstructionModel(1, "title1", "text1"));
+	instructionsTestList.add(new InstructionModel(1, "title2", "text2"));
 
-		add(grid);
+	//https://vaadin.com/components/vaadin-grid/java-examples 
+	Grid<InstructionModel> grid = new Grid<>();
+	List<InstructionModel> instructions = instructionsTestList;  //getItems(); <--------- musste hardcoden. Wäre getItems() vom Interface?
+	grid.setItems(instructions);
+	Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
+	Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
+
+	add(grid);
+
+	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte werden z.B. via JDBC populated. 
+	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
+	Editor<InstructionModel> editor = grid.getEditor();
+	editor.setBinder(binder);
+	editor.setBuffered(true);
+
+	Div validationStatus = new Div();
+	validationStatus.setId("validation");
+
+
+	TextField titleField = new TextField();
+	binder.forField(titleField)
+	.withValidator(new StringLengthValidator("Title length must be between 1 and 10.", 1, 10))
+	.withStatusLabel(validationStatus).bind("title");
+	titelColumn.setEditorComponent(titleField);
+
+
+	TextField textField = new TextField();
+	binder.forField(textField)
+	.withValidator(new StringLengthValidator("Text length must be between 1 and 300.", 1, 300))
+	.withStatusLabel(validationStatus).bind("text");
+	textColumn.setEditorComponent(textField);
+
+
+	Collection<Button> editButtons = Collections
+		.newSetFromMap(new WeakHashMap<>());
 
 
 
-	/*
-	 * https://vaadin.com/components/vaadin-grid/java-examples
-	 * ist fast gleiches wie oben, aber nur Rest ab Binder<User> binder = new Binder<>(User.class); übernommem: 
-	Grid<Person> grid = new Grid<>();
-	List<Person> persons = getItems();
-	grid.setItems(persons);
-	Grid.Column<Person> firstNameColumn = grid.addColumn(Person::getFirstName).setHeader("First Name");
-	Grid.Column<Person> ageColumn = grid.addColumn(Person::getAge).setHeader("Age");
+	Column<InstructionModel> editorColumn = grid.addComponentColumn(instruction -> {
+	    Button edit = new Button("Edit");
+	    edit.addClassName("edit");
+	    edit.addClickListener(e -> {
+		editor.editItem(instruction);
+		titleField.focus();
+	    });
+	    edit.setEnabled(!editor.isOpen());
+	    editButtons.add(edit);
+	    return edit;
+	});
 
-	 */
-		Binder<User> binder = new Binder<>(User.class);
-		Editor<User> editor = grid.getEditor();
-		editor.setBinder(binder);
-		editor.setBuffered(true);
 
-		Div validationStatus = new Div();
-		validationStatus.setId("validation");
+	editor.addOpenListener(e -> editButtons.stream()
+		.forEach(button -> button.setEnabled(!editor.isOpen())));
+	editor.addCloseListener(e -> editButtons.stream()
+		.forEach(button -> button.setEnabled(!editor.isOpen())));
 
-	/*
-	 // TODO Wie kann ich Textfeld öffnen zur Bearbeitung von Instruktionen?
-	 * Hier wird wohl der Textfield zur Änderung der Instruktion gemacht. 
-	  //Probleme:  Bean Handler User Exception?
-	TextField firstNameField = new TextField();
-	binder.forField(firstNameField)
-	        .withValidator(new StringLengthValidator("First name length must be between 3 and 50.", 3, 50))
-	        .withStatusLabel(validationStatus).bind("firstName");
-	titelColumn.setEditorComponent(firstNameField);
-	 */
-	/*
-	TextField ageField = new TextField();
-	binder.forField(ageField)
-	        .withConverter(
-	                new StringToIntegerConverter("Age must be a number."))
-	        .withStatusLabel(validationStatus).bind("age");
-	textColumn.setEditorComponent(ageField);
-	 */
+	Button save = new Button("Save", e -> editor.save());
+	save.addClassName("save");
 
-		Collection<Button> editButtons = Collections
-			.newSetFromMap(new WeakHashMap<>());
+	Button cancel = new Button("Cancel", e -> editor.cancel());
+	cancel.addClassName("cancel");
 
-		Grid.Column<User> editorColumn = grid.addComponentColumn(person -> {
-	    	Button edit = new Button("Edit");
-	    	edit.addClassName("edit");
-	    	edit.addClickListener(e -> {
-				editor.editItem(person);
-				//  firstNameField.focus();
-	    	});
-	    	edit.setEnabled(!editor.isOpen());
-	    	editButtons.add(edit);
-	    	return edit;
-		});
+	// Add a keypress listener that listens for an escape key up event.
+	// Note! some browsers return key as Escape and some as Esc
+	grid.getElement().addEventListener("keyup", event -> editor.cancel())
+	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
-		editor.addOpenListener(e -> editButtons.stream()
-			.forEach(button -> button.setEnabled(!editor.isOpen())));
-		editor.addCloseListener(e -> editButtons.stream()
-			.forEach(button -> button.setEnabled(!editor.isOpen())));
+	Div buttons = new Div(save, cancel);
+	editorColumn.setEditorComponent(buttons);
 
-		Button save = new Button("Save", e -> editor.save());
-		save.addClassName("save");
+	Label message = new Label("-");
 
-		Button cancel = new Button("Cancel", e -> editor.cancel());
-		cancel.addClassName("cancel");
-
-		// Add a keypress listener that listens for an escape key up event.
-		// Note! some browsers return key as Escape and some as Esc
-		grid.getElement().addEventListener("keyup", event -> editor.cancel())
-			.setFilter("event.key === 'Escape' || event.key === 'Esc'");
-
-		Div buttons = new Div(save, cancel);
-		editorColumn.setEditorComponent(buttons);
-
-		//try and error: wegen message
-		Label message = new Label("-");
-
-		editor.addSaveListener(
-			event -> message.setText(event.getItem().toString() + ", "
-				+ event.getItem().toString()));
-		add(validationStatus, grid);
+	editor.addSaveListener(
+		event -> message.setText(event.getItem().toString() + ", "
+			+ event.getItem().toString()));
+	add(validationStatus, grid);
     }
 }
 
