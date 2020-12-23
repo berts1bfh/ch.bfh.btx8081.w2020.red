@@ -38,7 +38,7 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 
 	add(grid);
 
-	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte werden z.B. via JDBC populated. 
+	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte sollte wir z.B via JDBC bekommen . 
 	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
 	Editor<InstructionModel> editor = grid.getEditor();
 	editor.setBinder(binder);
@@ -85,6 +85,7 @@ public class InstructionMgmtView  extends VerticalLayout{//implements Instructio
 	editor.addCloseListener(e -> editButtons.stream()
 		.forEach(button -> button.setEnabled(!editor.isOpen())));
 
+	
 	Button save = new Button("Save", e -> editor.save());
 	save.addClassName("save");
 

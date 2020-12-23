@@ -3,6 +3,9 @@ package presenter;
 import view.InstructionViewInterface;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import model.InstructionModel;
 
 public class InstructionMgmtPresenter {
 
@@ -14,7 +17,7 @@ public class InstructionMgmtPresenter {
      * @param view InstructionViewInterface
      */
     public InstructionMgmtPresenter(InstructionViewInterface view) {
-        this.view = view;
+	this.view = view;
     }
 
     /**
@@ -22,22 +25,24 @@ public class InstructionMgmtPresenter {
      * @return ArrayList<> of instructions
      */
     private ArrayList<ArrayList<String>> getInstructions() {
-        // get from model, return
-        return new ArrayList<>();
+	// get from model, return
+	return new ArrayList<>();
     }
 
     /**
      * Sets instructions from InstructionModel on InstructionView
      */
     public void setInstructions() {
-        ArrayList<ArrayList<String>> instructions = getInstructions();
-        view.setInstructions(instructions);
+	ArrayList<ArrayList<String>> instructions = getInstructions();
+	view.setInstructions(instructions);
     }
 
     /**
      * Updates InstructionModel based on changes in view
      */
     public void updateModel() {
-        // TODO: Implement onClick ?
+	// TODO: Implement onClick ?
     }
+
+
 }
