@@ -1,4 +1,4 @@
-package view;
+package view.instruction;
 
 import java.util.ArrayList;
 
@@ -6,6 +6,8 @@ import com.vaadin.flow.component.accordion.Accordion;
 import com.vaadin.flow.component.details.DetailsVariant;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+
+import view.InstructionViewInterface;
 
 /**
  * InstructionViewImpl manages Implementation of InstructionViewInterface

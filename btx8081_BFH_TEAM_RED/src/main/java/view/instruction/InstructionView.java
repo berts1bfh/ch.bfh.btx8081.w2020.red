@@ -1,4 +1,4 @@
-package view;
+package view.instruction;
 
 
 import com.vaadin.flow.component.button.Button;
