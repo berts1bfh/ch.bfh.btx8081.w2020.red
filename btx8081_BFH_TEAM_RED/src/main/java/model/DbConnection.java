@@ -9,9 +9,9 @@ import java.sql.SQLException;
  */
 public class DbConnection {
 
-    // Original: "jdbc:sqlite:src/acadiaDB.db"
+    // Original: "jdbc:sqlite:src/main/java/model/acadiaDB.db"
     // Denis: "jdbc:sqlite:C:/Users/Denis/git/ch.bfh.btx8081.w2020.red/btx8081_BFH_TEAM_RED/src/main/java/model/acadiaDB.db"; 
-	public static final String DB_URL = "jdbc:sqlite:C:/Users/Denis/git/ch.bfh.btx8081.w2020.red/btx8081_BFH_TEAM_RED/src/main/java/model/acadiaDB.db"; 
+	public static final String DB_URL = "jdbc:sqlite:src/main/java/model/acadiaDB.db"; 
 
 	public static Connection connect() {
 		Connection connection = null;

@@ -89,7 +89,7 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonOpenContacts.setIconAfterText(true);
 	
 	
-	buttonLayout.add(buttonOpenCalculator,buttonOpenDiary,buttonOpenInstructions, buttonOpenContacts,buttonOpenEmergency);
+	buttonLayout.add(buttonOpenDiary,buttonOpenInstructions, buttonOpenContacts,buttonOpenEmergency);
 	viewLayout.add(buttonLayout);
 
 	add(viewLayout);
