@@ -49,7 +49,7 @@ public class InstructionModel {
 
 			}
 			connection.commit();
-			connection.close();
+			// connection.close(); with Singleton pattern: Single close on leaving / ending?
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -139,7 +139,7 @@ public class InstructionModel {
 
 			// instruction_text.close();
 			connection.commit();
-			connection.close();
+			// connection.close(); not with DbConnection singleton pattern
 
 		} catch (SQLException e) {
 			e.printStackTrace();

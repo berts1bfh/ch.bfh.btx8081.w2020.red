@@ -1,47 +1,48 @@
 package presenter;
 
+import view.InstructionMgmtViewInterface;
 import view.InstructionViewInterface;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import model.InstructionModel;
 
 public class InstructionMgmtPresenter {
 
-    // InstructionModel model;
-    InstructionViewInterface view;
+    private ArrayList<InstructionModel> models;
+    InstructionMgmtViewInterface view;
 
     /**
      * Handles InstructionModel and InstructionMgmtView
      * @param view InstructionViewInterface
      */
-    public InstructionMgmtPresenter(InstructionViewInterface view) {
-	this.view = view;
+    public InstructionMgmtPresenter(InstructionMgmtViewInterface view) {
+        this.models = InstructionModel.getInstructionsFromDB();
+	    this.view = view;
     }
 
     /**
      * Returns instruction data as an ArrayList from InstructionModel
      * @return ArrayList<> of instructions
      */
-    private ArrayList<ArrayList<String>> getInstructions() {
-	// get from model, return
-	return new ArrayList<>();
+    private ArrayList<InstructionModel> getInstructions() {
+        return models;
     }
 
     /**
      * Sets instructions from InstructionModel on InstructionView
      */
     public void setInstructions() {
-	ArrayList<ArrayList<String>> instructions = getInstructions();
-	view.setInstructions(instructions);
+	    view.setInstructions(getInstructions());
     }
 
     /**
      * Updates InstructionModel based on changes in view
      */
     public void updateModel() {
-	// TODO: Implement onClick ?
+        for (InstructionModel model : view.getInstructions()) {
+            model.updateInDB();
+        }
     }
 
 

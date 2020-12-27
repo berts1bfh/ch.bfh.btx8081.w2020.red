@@ -13,100 +13,114 @@ import com.vaadin.flow.data.validator.StringLengthValidator;
 import com.vaadin.flow.router.Route;
 
 import model.InstructionModel;
+import presenter.InstructionMgmtPresenter;
+import presenter.InstructionPresenter;
 
 
 import java.util.*;
 
 
 @Route("InstructionMgmtView")
-public class InstructionMgmtView  extends VerticalLayout{//implements InstructionViewInterface{
+public class InstructionMgmtView  extends VerticalLayout implements InstructionMgmtViewInterface {
+
+	InstructionMgmtPresenter presenter;
+	private ArrayList<InstructionModel> instructions;
 
     public InstructionMgmtView() {
 
-	
-	//Diese 3 Zeilen gemacht für Test.
-	ArrayList<InstructionModel> instructionsTestList = new ArrayList<>();
-	instructionsTestList.add(new InstructionModel(1, "title1", "text1"));
-	instructionsTestList.add(new InstructionModel(1, "title2", "text2"));
+    	presenter = new InstructionMgmtPresenter(this);
+    	presenter.setInstructions();
 
-	//https://vaadin.com/components/vaadin-grid/java-examples 
-	Grid<InstructionModel> grid = new Grid<>();
-	List<InstructionModel> instructions = instructionsTestList;  //getItems(); <--------- musste hardcoden. Wäre getItems() vom Interface?
-	grid.setItems(instructions);
-	Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
-	Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
+		//Diese 3 Zeilen gemacht für Test.
+		ArrayList<InstructionModel> instructionsTestList = new ArrayList<>();
+		instructionsTestList.add(new InstructionModel(1, "title1", "text1"));
+		instructionsTestList.add(new InstructionModel(1, "title2", "text2"));
 
-	add(grid);
+		//https://vaadin.com/components/vaadin-grid/java-examples
+		Grid<InstructionModel> grid = new Grid<>();
+		grid.setItems(instructions);
+		Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
+		Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
 
-	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte sollte wir z.B via JDBC bekommen . 
-	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
-	Editor<InstructionModel> editor = grid.getEditor();
-	editor.setBinder(binder);
-	editor.setBuffered(true);
+		add(grid);
 
-	Div validationStatus = new Div();
-	validationStatus.setId("validation");
+		//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte sollte wir z.B via JDBC bekommen .
+		Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
+		Editor<InstructionModel> editor = grid.getEditor();
+		editor.setBinder(binder);
+		editor.setBuffered(true);
 
+		Div validationStatus = new Div();
+		validationStatus.setId("validation");
 
-	TextField titleField = new TextField();
-	binder.forField(titleField)
-	.withValidator(new StringLengthValidator("Title length must be between 1 and 10.", 1, 10))
-	.withStatusLabel(validationStatus).bind("title");
-	titelColumn.setEditorComponent(titleField);
+		TextField titleField = new TextField();
+		binder.forField(titleField)
+			.withValidator(new StringLengthValidator("Title length must be between 1 and 10.", 1, 10))
+			.withStatusLabel(validationStatus).bind("title");
+		titelColumn.setEditorComponent(titleField);
 
-
-	TextField textField = new TextField();
-	binder.forField(textField)
-	.withValidator(new StringLengthValidator("Text length must be between 1 and 300.", 1, 300))
-	.withStatusLabel(validationStatus).bind("text");
-	textColumn.setEditorComponent(textField);
-
-
-	Collection<Button> editButtons = Collections
-		.newSetFromMap(new WeakHashMap<>());
+		TextField textField = new TextField();
+		binder.forField(textField)
+			.withValidator(new StringLengthValidator("Text length must be between 1 and 300.", 1, 300))
+			.withStatusLabel(validationStatus).bind("text");
+		textColumn.setEditorComponent(textField);
 
 
+		Collection<Button> editButtons = Collections
+			.newSetFromMap(new WeakHashMap<>());
 
-	Column<InstructionModel> editorColumn = grid.addComponentColumn(instruction -> {
-	    Button edit = new Button("Edit");
-	    edit.addClassName("edit");
-	    edit.addClickListener(e -> {
-		editor.editItem(instruction);
-		titleField.focus();
-	    });
-	    edit.setEnabled(!editor.isOpen());
-	    editButtons.add(edit);
-	    return edit;
-	});
+		Column<InstructionModel> editorColumn = grid.addComponentColumn(instruction -> {
+	    	Button edit = new Button("Edit");
+	    	edit.addClassName("edit");
+	    	edit.addClickListener(e -> {
+				editor.editItem(instruction);
+				titleField.focus();
+	    	});
+	    	edit.setEnabled(!editor.isOpen());
+	    	editButtons.add(edit);
+	    	return edit;
+		});
 
+		editor.addOpenListener(e -> editButtons.stream()
+			.forEach(button -> button.setEnabled(!editor.isOpen())));
+		editor.addCloseListener(e -> editButtons.stream()
+			.forEach(button -> button.setEnabled(!editor.isOpen())));
 
-	editor.addOpenListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
-	editor.addCloseListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
+		Button save = new Button("Save", e -> editor.save());
+		save.addClassName("save");
 
-	
-	Button save = new Button("Save", e -> editor.save());
-	save.addClassName("save");
+		Button cancel = new Button("Cancel", e -> editor.cancel());
+		cancel.addClassName("cancel");
 
-	Button cancel = new Button("Cancel", e -> editor.cancel());
-	cancel.addClassName("cancel");
+		// Add a keypress listener that listens for an escape key up event.
+		// Note! some browsers return key as Escape and some as Esc
+		grid.getElement().addEventListener("keyup", event -> editor.cancel())
+			.setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
-	// Add a keypress listener that listens for an escape key up event.
-	// Note! some browsers return key as Escape and some as Esc
-	grid.getElement().addEventListener("keyup", event -> editor.cancel())
-	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
+		Div buttons = new Div(save, cancel);
+		editorColumn.setEditorComponent(buttons);
 
-	Div buttons = new Div(save, cancel);
-	editorColumn.setEditorComponent(buttons);
+		Label message = new Label("-");
 
-	Label message = new Label("-");
-
-	editor.addSaveListener(
-		event -> message.setText(event.getItem().toString() + ", "
-			+ event.getItem().toString()));
-	add(validationStatus, grid);
+		editor.addSaveListener(
+			event -> message.setText(event.getItem().toString() + ", "
+				+ event.getItem().toString()));
+		// Todo: Update text in instructions / Models, call presenter.updateModel()
+		// Example:
+		instructions.get(0).setText("CHANGED: " + instructions.get(0).getText());
+		presenter.updateModel();
+		add(validationStatus, grid);
     }
+
+	@Override
+	public void setInstructions(ArrayList<InstructionModel> instructionList) {
+		this.instructions = instructionList;
+	}
+
+	@Override
+	public ArrayList<InstructionModel> getInstructions() {
+		return this.instructions;
+	}
 }
 
 
