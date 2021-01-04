@@ -45,5 +45,16 @@ public class InstructionMgmtPresenter {
         }
     }
 
+    /**
+     * Updates a specific InstructionModel based on id
+     * @param id id of model to be updated
+     */
+    public void updateModel(int id) { // TODO: Use model list from presenter only
+        InstructionModel modelToUpdate = models.get(id);
+        InstructionModel modelFromView = view.getInstructions().get(id);
+        modelToUpdate.setTitle(modelFromView.getTitle());
+        modelToUpdate.setText(modelFromView.getText());
+        modelToUpdate.updateInDB();
+    }
 
 }

@@ -24,7 +24,7 @@ import java.util.*;
 public class InstructionMgmtView  extends VerticalLayout implements InstructionMgmtViewInterface {
 
     InstructionMgmtPresenter presenter;
-    private ArrayList<InstructionModel> instructions;
+    private ArrayList<InstructionModel> instructions; // TODO: Use presenter.getInstructions() instead
 
     public InstructionMgmtView() {
 
@@ -106,9 +106,6 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 		event -> 
 		{message.setText(event.getItem().toString() + ", "
 			+ event.getItem().toString());
-		// Todo: Update text in instructions / Models, call presenter.updateModel()
-		// Example:
-		instructions.get(0).setText("CHANGED: " + instructions.get(0).getText());
 		presenter.updateModel();
 		add(validationStatus, grid);
 		}

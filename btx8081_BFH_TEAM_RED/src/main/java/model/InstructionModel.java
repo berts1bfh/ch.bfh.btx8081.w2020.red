@@ -121,8 +121,13 @@ public class InstructionModel {
 			connection = DbConnection.connect();
 			Statement instruction_text = connection.createStatement();
 
-			String sql = "update instruktionen set instruktion = " + text
-					+ " where inst_id =" + id + ";"; // Kein Update für Titel?
+			String sql = "update instruktionen set instruktion = '" + text
+					+ "' where inst_id = " + id + ";";
+			instruction_text.executeUpdate(sql);
+			connection.setAutoCommit(false);
+
+			sql = "update instruktionen set inst_titel = '" + title
+					+ "' where inst_id = " + id + ";";
 			instruction_text.executeUpdate(sql);
 			connection.setAutoCommit(false);
 
