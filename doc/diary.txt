@@ -362,7 +362,12 @@ Nächster Termin 17.12.20 zum Sprint Review mit Herr Vogel
 
 
 
-
+04.01.2021
+Denis hat die Exit-Taste der Instruktions-Bearbeitungsoberfläche implementiert. Die Schnittstelle funktioniert, aber die Persistenz auf der DB funktioniert immer noch nicht.
+Simon hat den Fehler gefunden und die Implementierung vervollständigt. 
+Simon schlug vor, die Instruktions-ID zu verwenden, um die Instruktionen einzeln zu bearbeiten. Die Implementierung wird durchgeführt. 
+Sabine stellte einige Fragen zu den JUnits. Die Implementierung zu den Tests ist in Arbeit.
+Andre implementierte das Conctacs-Modell, die View und den Presenter. Die Oberfläche der Kontakte muss noch fertiggestellt werden. 
 
 
 
