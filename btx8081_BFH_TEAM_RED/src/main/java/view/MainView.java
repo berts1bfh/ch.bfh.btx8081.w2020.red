@@ -31,12 +31,9 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	displayUsername.setReadOnly(true);
 	add(displayUsername);
 
-
 	HorizontalLayout viewLayout = new HorizontalLayout();
 	VerticalLayout buttonLayout  = new VerticalLayout();
 
-	
-	
 	buttonLayout.getStyle().set("border", "1px solid #94949E");
 	buttonLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.BETWEEN);
 	buttonLayout.setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.STRETCH);
@@ -44,13 +41,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonLayout.setMargin(true);
 	buttonLayout.setSpacing(false);
 		
-	
-	Button buttonOpenCalculator = new Button("Calculator", VaadinIcon.ABACUS.create());
-	buttonOpenCalculator.addClickListener(e-> {
-	    buttonOpenCalculator.getUI().ifPresent(ui -> ui.navigate("calculator"));
-	    
-	});
-
 	Button buttonOpenDiary = new Button("Diary", VaadinIcon.BOOK.create());
 	buttonOpenDiary.addClickListener(e-> {
 	    buttonOpenDiary.getUI().ifPresent(ui -> ui.navigate("diary"));
@@ -72,16 +62,13 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	    buttonOpenContacts.getUI().ifPresent(ui -> ui.navigate("contacts"));
 	});
 
-	buttonOpenCalculator.setIconAfterText(true);
 	buttonOpenDiary.setIconAfterText(true);
 	buttonOpenInstructions.setIconAfterText(true);
 	buttonOpenEmergency.setIconAfterText(true);
 	buttonOpenContacts.setIconAfterText(true);
 	
-	
-	buttonLayout.add(buttonOpenDiary,buttonOpenInstructions, buttonOpenContacts,buttonOpenEmergency);
+	buttonLayout.add(buttonOpenDiary,buttonOpenInstructions,buttonOpenContacts,buttonOpenEmergency);
 	viewLayout.add(buttonLayout);
-
 	add(viewLayout);
     }
 }
