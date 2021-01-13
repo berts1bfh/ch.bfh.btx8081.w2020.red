@@ -2,6 +2,7 @@ package view;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.charts.model.Label;
+import com.vaadin.flow.component.grid.FooterRow;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.Grid.Column;
 import com.vaadin.flow.component.grid.editor.Editor;
@@ -31,10 +32,6 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 	presenter = new InstructionMgmtPresenter(this);
 	presenter.setInstructions();
 
-	//Diese 3 Zeilen gemacht für Test.
-	ArrayList<InstructionModel> instructionsTestList = new ArrayList<>();
-	instructionsTestList.add(new InstructionModel(1, "title1", "text1"));
-	instructionsTestList.add(new InstructionModel(1, "title2", "text2"));
 
 	//https://vaadin.com/components/vaadin-grid/java-examples
 	Grid<InstructionModel> grid = new Grid<>();
@@ -42,8 +39,35 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 	Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
 	Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
 
-	add(grid);
+	// 13.01.2021 Denis: Add und RemoveLatest Instruction rein, persistierung fehlt nocht
+	//https://vaadin.com/components/vaadin-grid/java-examples/assigning-data
+	// TODO: a) ID sollte hier inkrementiert werden: neue methode z.B. getLatestIdAndInkrement(), oder sequelize in DB mit overload den constructor?
+	// TODO: b) braucht es noch eine neue Methode um Instructionen zu Adden/removen?
+	Button addButton = new Button("Add Item", event -> {
+	    instructions.add(new InstructionModel(99999, "X", "Y"));
+	    // The dataProvider knows which List it is based on, so when you
+	    // edit the list
+	    // you edit the dataprovider.
+	    grid.getDataProvider().refreshAll();
+	});
+	
+	Button removeButton = new Button("Remove last", event -> {
+	    instructions.remove(instructions.size() - 1);
+	    // The dataProvider knows which List it is based on, so when you
+	    // edit the list
+	    // you edit the dataprovider.
+	    grid.getDataProvider().refreshAll();
+	});
+	
+	//Add und Remove button sollten immer zuunterst sein:
+	FooterRow footerRow = grid.appendFooterRow();
+	footerRow.getCell(titelColumn).setComponent(addButton);
+	footerRow.getCell(textColumn).setComponent(removeButton);
+	
+	add(grid,addButton,removeButton);
 
+	
+	
 	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte sollte wir z.B via JDBC bekommen .
 	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
 	Editor<InstructionModel> editor = grid.getEditor();
