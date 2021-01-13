@@ -27,16 +27,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
  
 
     public MainView() {
-	
-	//TODO löschen wenn nicht gebraucht, dmo
-	/* 
-	//Menu als alternative Darstellung, LOESCHEN am Schluss, wenn nicht gebraucht.
-	VerticalLayout menu = new VerticalLayout();
-	menu.add(new RouterLink("calulator", CalculatorView.class));
-	Anchor anchorWiki = new Anchor("https://wikipedia.com", "Wikipedia");
-	menu.add(anchorWiki);
-	add(menu);
-	 */	
 
 	displayUsername.setReadOnly(true);
 	add(displayUsername);
