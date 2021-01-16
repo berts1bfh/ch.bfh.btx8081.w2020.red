@@ -41,6 +41,7 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonLayout.setMargin(true);
 	buttonLayout.setSpacing(false);
 		
+
 	Button buttonOpenDiary = new Button("Diary", VaadinIcon.BOOK.create());
 	buttonOpenDiary.addClickListener(e-> {
 	    buttonOpenDiary.getUI().ifPresent(ui -> ui.navigate("diary"));
@@ -61,6 +62,7 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonOpenContacts.addClickListener(e-> {
 	    buttonOpenContacts.getUI().ifPresent(ui -> ui.navigate("contacts"));
 	});
+
 
 	buttonOpenDiary.setIconAfterText(true);
 	buttonOpenInstructions.setIconAfterText(true);

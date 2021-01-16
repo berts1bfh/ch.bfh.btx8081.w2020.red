@@ -7,7 +7,7 @@ import model.ContactsModel;
 
 public class ContactsPresenter {
 
-	public ArrayList<Contact> contacts;
+	private ArrayList<Contact> contacts;
 
 	public ContactsPresenter() {
 		
@@ -16,7 +16,7 @@ public class ContactsPresenter {
 
 	}
 
-//	Take the information in the contacts array and tranSfer the info from all contacts to an array of strings.
+//	Take the information in the contacts array and transfer the info from all contacts to an array of strings.
 	public ArrayList<String> getContactsInfo() {
 
 		ArrayList<String> contactInfos = new ArrayList<>();
@@ -32,5 +32,11 @@ public class ContactsPresenter {
 		}
 		return contactInfos;
 	}
+//	return a array the contacts objects
+	public ArrayList<Contact> getContactsObj(){
+		return contacts;
+		
+	}
+	
 
 }
