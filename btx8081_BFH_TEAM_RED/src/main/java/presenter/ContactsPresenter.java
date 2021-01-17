@@ -1,18 +1,17 @@
 package presenter;
 
 import java.util.ArrayList;
-
 import model.Contact;
 import model.ContactsModel;
 
 public class ContactsPresenter {
 
 	private ArrayList<Contact> contacts;
+	public ContactsModel contactModel = new ContactsModel();
 
 	public ContactsPresenter() {
-		
-		ContactsModel cmodel = new ContactsModel();
-		contacts = cmodel.getContactsFromDB();
+
+		contacts = contactModel.getContactsFromDB();
 
 	}
 
@@ -32,11 +31,15 @@ public class ContactsPresenter {
 		}
 		return contactInfos;
 	}
+
 //	return a array the contacts objects
-	public ArrayList<Contact> getContactsObj(){
+	public ArrayList<Contact> getContactsObj() {
 		return contacts;
-		
+
 	}
 	
+	public void editDbContact(Contact contact) {
+		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(), contact.getStreet(), contact.getCity());
+	}
 
 }

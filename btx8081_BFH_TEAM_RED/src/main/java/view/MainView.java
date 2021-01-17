@@ -1,7 +1,4 @@
 package view;
-
-
-
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -13,8 +10,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.server.PWA;
-
-
 
 /**
  * The main view contains a button and a click listener.
@@ -62,7 +57,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonOpenContacts.addClickListener(e-> {
 	    buttonOpenContacts.getUI().ifPresent(ui -> ui.navigate("contacts"));
 	});
-
 
 	buttonOpenDiary.setIconAfterText(true);
 	buttonOpenInstructions.setIconAfterText(true);
