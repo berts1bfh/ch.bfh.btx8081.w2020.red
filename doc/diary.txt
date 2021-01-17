@@ -360,6 +360,14 @@ Simon hat das Programm zusammengefügt, wir hatten noch einen Bug mit der connec
 Danach haben wir das UML Diagramm erstellt und Herr Vogel gemailt. 
 Nächster Termin 17.12.20 zum Sprint Review mit Herr Vogel
 
+17.12.2020
+Verschoben auf 23.12.2020
+
+23.12.2020
+Besprechung wer was noch macht um die Applikation zu beenden. Sabine rechercher UnitTesting. Simon zusammenfügen der Klassen mit André. Denis Buttons implementiert. 
+
+27.12.2020
+Besprechung wer wie weit mit seiner Arbeit gekommen ist. Simon hat noch das POM geändert und hochgeladen, so dass man mit Junit arbeiten kann. Aufgefallen, dass wir den Server mehrmals ansprechen. Diskussion, ob eine andere Lösung möglich ist. 
 
 
 04.01.2021
@@ -369,7 +377,18 @@ Simon schlug vor, die Instruktions-ID zu verwenden, um die Instruktionen einzeln
 Sabine stellte einige Fragen zu den JUnits. Die Implementierung zu den Tests ist in Arbeit.
 Andre implementierte das Conctacs-Modell, die View und den Presenter. Die Oberfläche der Kontakte muss noch fertiggestellt werden. 
 
+09.01.2021
+Nachführen des Scrumbacklogs. Mündlich besprochen am 27.12.2021 aber leider noch nicht nachgeführt worden. Besprochen wo die Probleme noch sind in unserer Implementierung. Und uns gegenseitig unterstützt bei bestimmten implementierungen. 
 
+13.01.2021
+Kurzes Feedback wo jeder steht bei seinen Aktivitäten
 
+17.012021
+Duskussion über das JUnit-Testing, ob dies ähnlich oder gleich ist wie die Vaadin-Komponente Validator.
+Vorstellen des Codes von André und Simon. 
+Erklärung von Sabine, warum sie nicht weiter kommt beim Junit-Test über die Klasse InstuctionMgmtView bez des dort enthaltenen textfelds title und text
+Erfragen des Gerüsts von der Schlusspräsentation
+Aktualisieren des Sprints
+Nächste Sitzung am Dienstag den 19.01.2021 um 20 Uhr
 
 
