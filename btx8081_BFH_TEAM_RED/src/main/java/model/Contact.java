@@ -8,24 +8,25 @@ public class Contact {
 	private	String street;
 	private	String houseNum;
 	private	String City;
-	private	int id;
+	private	String id;
 	
-	public Contact(String name,String surname,String phoneNum,	String street,String houseNum,String City) {
+	public Contact(String id,String name,String surname,String phoneNum,	String street,String houseNum,String City) {
 		this.name =name;
 		this.surname = surname;
 		this.phoneNum = phoneNum;
 		this.street = street;
 		this.houseNum=houseNum;
 		this.City = City;
+		this.id=id;
 	}
 	
 	public Contact() {
 		
 	}
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {

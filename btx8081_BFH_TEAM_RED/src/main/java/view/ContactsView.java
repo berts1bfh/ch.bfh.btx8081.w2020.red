@@ -6,6 +6,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
@@ -19,8 +20,8 @@ public class ContactsView extends VerticalLayout {
 	private static final long serialVersionUID = 1L;
 
 	ArrayList<Contact> contactObjs = new ArrayList<>();
-	public int index = 1;
 	public ContactsPresenter contactPresenter = new ContactsPresenter();
+	int index = 1;
 
 	public void showContacts() {
 
@@ -28,15 +29,22 @@ public class ContactsView extends VerticalLayout {
 		for (Contact Contact : contactObjs) {
 			VerticalLayout layout = new VerticalLayout();
 
+//			using TextField as a #Marker that will be used as Db ID in the edit/saving process
+			TextField ContactNumber = new TextField();
+			ContactNumber.setValue(String.valueOf(index));
+
 			Label name = new Label("Name: " + Contact.getName() + " " + Contact.getSurname());
 			Label phone = new Label("Phone Number: " + Contact.getPhoneNum());
 			Label address = new Label("Address: " + Contact.getStreet() + ", number " + Contact.getHouseNum() + ", "
 					+ Contact.getCity() + ".");
 
-			Button edit = new Button("Edit", VaadinIcon.USERS.create());
+			System.out.println(ContactNumber.getValue());
+
+			Button edit = new Button("Edit ", VaadinIcon.USERS.create());
 			edit.addClickListener(e -> {
 
-				editContact(index, contactPresenter);
+				
+				editContact(ContactNumber.getValue(), contactPresenter);
 
 			});
 
@@ -44,6 +52,8 @@ public class ContactsView extends VerticalLayout {
 			layout.getStyle().set("border", "3px solid #94949E");
 
 			this.add(layout);
+			index++;
+
 		}
 
 	}
@@ -52,32 +62,25 @@ public class ContactsView extends VerticalLayout {
 		this.removeAll();
 	}
 
-	public void editContact(int id, ContactsPresenter presenter) {
+	public void editContact(String id, ContactsPresenter presenter) {
 
+		int ArrayIndex = Integer.parseInt(id) - 1;
 		clearCanvas();
 
 		VerticalLayout layout = new VerticalLayout();
 
-		TextField name_ = new TextField();
-		TextField surname = new TextField();
-		TextField phoneNum = new TextField();
-		TextField street = new TextField();
-		TextField houseNum = new TextField();
-		TextField city = new TextField();
-		
-//		Set placeholders ( text inside the textfields)
-		name_.setPlaceholder(contactObjs.get(1).getName());
-		surname.setPlaceholder(contactObjs.get(1).getSurname());
-		phoneNum.setPlaceholder(contactObjs.get(1).getPhoneNum());
-		street.setPlaceholder(contactObjs.get(1).getStreet());
-		houseNum.setPlaceholder(contactObjs.get(1).getHouseNum());
-		city.setPlaceholder(contactObjs.get(1).getCity());
-		
-		
+		TextField name_ = new TextField("Name", contactObjs.get(ArrayIndex).getName());
+		TextField surname = new TextField("Surname", contactObjs.get(ArrayIndex).getSurname());
+		TextField phoneNum = new TextField("Phone", contactObjs.get(ArrayIndex).getPhoneNum());
+		TextField street = new TextField("Street", contactObjs.get(ArrayIndex).getStreet());
+		TextField houseNum = new TextField("Home number", contactObjs.get(ArrayIndex).getHouseNum());
+		TextField city = new TextField("City", contactObjs.get(ArrayIndex).getCity());
+
 		Button save = new Button("Save", VaadinIcon.USERS.create());
 		save.addClickListener(e -> {
-			
-			Contact editedContact = new Contact(name_.getValue(), surname.getValue(), phoneNum.getValue(), street.getValue(), houseNum.getValue(), city.getValue());
+
+			Contact editedContact = new Contact(id, name_.getValue(), surname.getValue(), phoneNum.getValue(),
+					street.getValue(), houseNum.getValue(), city.getValue());
 			presenter.editDbContact(editedContact);
 			clearCanvas();
 			showContacts();
@@ -93,10 +96,12 @@ public class ContactsView extends VerticalLayout {
 			clearCanvas();
 			showContacts();
 			getUI().ifPresent(ui -> UI.getCurrent().getPage().reload());
-			
+
 		});
-		
-		this.add(layout, save, back);
+
+		HorizontalLayout buttons = new HorizontalLayout();
+		buttons.add(save,back);
+		this.add(layout, buttons);
 
 	}
 
@@ -108,10 +113,10 @@ public class ContactsView extends VerticalLayout {
 		Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
 		back.addClickListener(e -> {
 			back.getUI().ifPresent(ui -> ui.navigate("main"));
-			
+
 		});
 
-		add(new Text("Contact infos"));
+		add(new Text("Contact Information"));
 
 //		showContacts(contactsInfo,this);
 		showContacts();

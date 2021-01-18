@@ -21,6 +21,7 @@ public class ContactsPresenter {
 		ArrayList<String> contactInfos = new ArrayList<>();
 
 		for (Contact Contact : contacts) {
+			contactInfos.add(Contact.getId());
 			contactInfos.add(Contact.getName());
 			contactInfos.add(Contact.getSurname());
 			contactInfos.add(Contact.getPhoneNum());
@@ -37,9 +38,10 @@ public class ContactsPresenter {
 		return contacts;
 
 	}
-	
+//	pass the contact object to the contact model
 	public void editDbContact(Contact contact) {
-		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(), contact.getStreet(), contact.getCity());
+		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(), 
+				contact.getStreet(), contact.getCity());
 	}
 
 }
