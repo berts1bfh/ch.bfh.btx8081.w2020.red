@@ -1,7 +1,6 @@
 package presenter;
 
 import view.InstructionMgmtViewInterface;
-import view.InstructionViewInterface;
 
 import java.util.ArrayList;
 
@@ -55,6 +54,30 @@ public class InstructionMgmtPresenter {
         modelToUpdate.setTitle(modelFromView.getTitle());
         modelToUpdate.setText(modelFromView.getText());
         modelToUpdate.updateInDB();
+    }
+
+    /**
+     * Creates new model in DB using auto-increment for ID
+     * @param model to be created
+     */
+    public void addNewModel(InstructionModel model) {
+        model.createInDB();
+    }
+
+    /**
+     * Saves a model into the DB
+     * @param model model to be added
+     */
+    public void addModel(InstructionModel model) {
+        model.saveToDB();
+    }
+
+    /**
+     * Deletes model from the DB
+     * @param model model to be deleted
+     */
+    public void deleteModel(InstructionModel model) {
+        model.deleteFromDB();
     }
 
 }

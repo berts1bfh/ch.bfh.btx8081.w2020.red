@@ -73,7 +73,28 @@ public class InstructionModel {
 			pstmt.executeUpdate();
 
 			connection.commit();
-			connection.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Saves instruction to DB with  auto-increment of id
+	 */
+	public void createInDB() {
+		// TODO: Inst_id should be auto-increment!
+		String sql = "INSERT INTO instruktionen(instruktion,inst_titel) VALUES(?,?)";
+		try {
+			connection = DbConnection.connect();
+			PreparedStatement pstmt = connection.prepareStatement(sql);
+
+			pstmt.setString(1, text);
+			pstmt.setString(2, title);
+
+			pstmt.executeUpdate();
+
+			connection.commit();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -174,7 +195,6 @@ public class InstructionModel {
 
 			}
 			connection.commit();
-			connection.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -183,6 +203,10 @@ public class InstructionModel {
 		id = 0;
 		text = null;
 		title = null;
+	}
+
+	public int getId() {
+		return id;
 	}
 	
 	public String getTitle() {

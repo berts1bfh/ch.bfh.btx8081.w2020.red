@@ -15,7 +15,6 @@ import com.vaadin.flow.router.Route;
 
 import model.InstructionModel;
 import presenter.InstructionMgmtPresenter;
-import presenter.InstructionPresenter;
 
 
 import java.util.*;
@@ -44,7 +43,9 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 	// TODO: a) ID sollte hier inkrementiert werden: neue methode z.B. getLatestIdAndInkrement(), oder sequelize in DB mit overload den constructor?
 	// TODO: b) braucht es noch eine neue Methode um Instructionen zu Adden/removen?
 	Button addButton = new Button("Add Item", event -> {
-	    instructions.add(new InstructionModel(99999, "X", "Y"));
+		InstructionModel newModel = new InstructionModel(99999, "X", "Y");
+		presenter.addNewModel(newModel);
+	    instructions.add(newModel);
 	    // The dataProvider knows which List it is based on, so when you
 	    // edit the list
 	    // you edit the dataprovider.
@@ -52,6 +53,8 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 	});
 	
 	Button removeButton = new Button("Remove last", event -> {
+		InstructionModel lastModel = instructions.get(instructions.size() -1);
+		presenter.deleteModel(lastModel);
 	    instructions.remove(instructions.size() - 1);
 	    // The dataProvider knows which List it is based on, so when you
 	    // edit the list
@@ -138,12 +141,12 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 
     @Override
     public void setInstructions(ArrayList<InstructionModel> instructionList) {
-	this.instructions = instructionList;
+    	this.instructions = instructionList;
     }
 
     @Override
     public ArrayList<InstructionModel> getInstructions() {
-	return this.instructions;
+    	return this.instructions;
     }
 }
 
