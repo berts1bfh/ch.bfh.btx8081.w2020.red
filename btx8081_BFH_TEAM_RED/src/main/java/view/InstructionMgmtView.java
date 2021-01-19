@@ -25,61 +25,47 @@ import java.util.*;
 public class InstructionMgmtView  extends VerticalLayout implements InstructionMgmtViewInterface {
 
     InstructionMgmtPresenter presenter;
-    private ArrayList<InstructionModel> instructions; // TODO: Use presenter.getInstructions() instead
+    private ArrayList<InstructionModel> instructions;
 
     public InstructionMgmtView() {
 
 	presenter = new InstructionMgmtPresenter(this);
 	presenter.setInstructions();
 
-
-	//https://vaadin.com/components/vaadin-grid/java-examples
+	Div validationStatus = new Div();
+	validationStatus.getStyle().set("color", "Red");
+	validationStatus.setId("validation");
+	add(validationStatus);
+	
 	Grid<InstructionModel> grid = new Grid<>();
 	grid.setItems(instructions);
 	Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
 	Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
 
-	// 13.01.2021 Denis: Add und RemoveLatest Instruction rein, persistierung fehlt nocht
-	//https://vaadin.com/components/vaadin-grid/java-examples/assigning-data
-	// TODO: a) ID sollte hier inkrementiert werden: neue methode z.B. getLatestIdAndInkrement(), oder sequelize in DB mit overload den constructor?
-	// TODO: b) braucht es noch eine neue Methode um Instructionen zu Adden/removen?
 	Button addButton = new Button("Add Item", event -> {
-		InstructionModel newModel = new InstructionModel(99999, "X", "Y");
-		presenter.addNewModel(newModel);
+	    InstructionModel newModel = new InstructionModel(99999, "X", "Y");
+	    presenter.addNewModel(newModel);
 	    instructions.add(newModel);
-	    // The dataProvider knows which List it is based on, so when you
-	    // edit the list
-	    // you edit the dataprovider.
 	    grid.getDataProvider().refreshAll();
 	});
-	
+
 	Button removeButton = new Button("Remove last", event -> {
-		InstructionModel lastModel = instructions.get(instructions.size() -1);
-		presenter.deleteModel(lastModel);
+	    InstructionModel lastModel = instructions.get(instructions.size() -1);
+	    presenter.deleteModel(lastModel);
 	    instructions.remove(instructions.size() - 1);
-	    // The dataProvider knows which List it is based on, so when you
-	    // edit the list
-	    // you edit the dataprovider.
 	    grid.getDataProvider().refreshAll();
 	});
-	
-	//Add und Remove button sollten immer zuunterst sein:
+
 	FooterRow footerRow = grid.appendFooterRow();
 	footerRow.getCell(titelColumn).setComponent(addButton);
 	footerRow.getCell(textColumn).setComponent(removeButton);
-	
+
 	add(grid,addButton,removeButton);
 
-	
-	
-	//Data Binder ist Teil von Vaadin API, damit kann ich Java Objekte nutzen. Diese Objekte sollte wir z.B via JDBC bekommen .
 	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
 	Editor<InstructionModel> editor = grid.getEditor();
 	editor.setBinder(binder);
 	editor.setBuffered(true);
-
-	Div validationStatus = new Div();
-	validationStatus.setId("validation");
 
 	TextField titleField = new TextField();
 	binder.forField(titleField)
@@ -120,8 +106,6 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 	Button cancel = new Button("Exit", e -> editor.cancel());
 	cancel.addClassName("cancel");
 
-	// Add a keypress listener that listens for an escape key up event.
-	// Note! some browsers return key as Escape and some as Esc
 	grid.getElement().addEventListener("keyup", event -> editor.cancel())
 	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
@@ -135,12 +119,10 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 		{message.setText(event.getItem().toString() + ", "
 			+ event.getItem().toString());
 		presenter.updateModel();
-		add(validationStatus, grid);
 		}
 		);
-    
-    
-    Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
+
+	Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
 	back.addClickListener(e -> {
 	    back.getUI().ifPresent(ui -> ui.navigate("instruction"));
 	}
@@ -150,12 +132,12 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
     }
     @Override
     public void setInstructions(ArrayList<InstructionModel> instructionList) {
-    	this.instructions = instructionList;
+	this.instructions = instructionList;
     }
 
     @Override
     public ArrayList<InstructionModel> getInstructions() {
-    	return this.instructions;
+	return this.instructions;
     }
 }
 
