@@ -38,10 +38,11 @@ public class ContactsPresenter {
 		return contacts;
 
 	}
+
 //	pass the contact object to the contact model
 	public void editDbContact(Contact contact) {
-		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(), 
-				contact.getStreet(), contact.getCity());
+		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(),
+				contact.getHouseNum(), contact.getStreet(), contact.getCity());
 	}
 
 }

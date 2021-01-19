@@ -38,12 +38,11 @@ public class ContactsView extends VerticalLayout {
 			Label address = new Label("Address: " + Contact.getStreet() + ", number " + Contact.getHouseNum() + ", "
 					+ Contact.getCity() + ".");
 
-			System.out.println(ContactNumber.getValue());
+			
 
 			Button edit = new Button("Edit ", VaadinIcon.USERS.create());
 			edit.addClickListener(e -> {
 
-				
 				editContact(ContactNumber.getValue(), contactPresenter);
 
 			});
@@ -100,7 +99,7 @@ public class ContactsView extends VerticalLayout {
 		});
 
 		HorizontalLayout buttons = new HorizontalLayout();
-		buttons.add(save,back);
+		buttons.add(save, back);
 		this.add(layout, buttons);
 
 	}
