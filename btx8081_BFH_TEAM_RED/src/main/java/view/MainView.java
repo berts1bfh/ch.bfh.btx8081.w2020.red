@@ -15,13 +15,9 @@ import com.vaadin.flow.server.PWA;
 @RouteAlias("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 public class MainView extends VerticalLayout implements HasComponents, RouterLayout{
-    private TextField displayUsername = new TextField(); 
  
     public MainView() {
 	
-	displayUsername.setReadOnly(true);
-	add(displayUsername);
-
 	HorizontalLayout viewLayout = new HorizontalLayout();
 	VerticalLayout buttonLayout  = new VerticalLayout();
 
