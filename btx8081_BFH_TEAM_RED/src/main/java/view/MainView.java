@@ -1,11 +1,12 @@
 package view;
+
 import com.vaadin.flow.component.HasComponents;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.router.RouterLayout;
@@ -16,10 +17,31 @@ import com.vaadin.flow.server.PWA;
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 public class MainView extends VerticalLayout implements HasComponents, RouterLayout{
  
-    public MainView() {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	
+	
+	
+	public MainView() {
+
+		
+		Image image1 = new Image("https://www.acadia-pharm.com/wp-content/themes/acadia/images/logo.png",
+				"Button image");
+		
+        image1.setWidth("350px");
+        image1.setHeight("69px");
+//        image1.getStyle().set("borderRadius", "50%");
+		
+		
+		
 	HorizontalLayout viewLayout = new HorizontalLayout();
 	VerticalLayout buttonLayout  = new VerticalLayout();
+	viewLayout.setSizeFull();
+	viewLayout.setJustifyContentMode(JustifyContentMode.CENTER);
+	this.setJustifyContentMode(JustifyContentMode.CENTER);
 
 	buttonLayout.getStyle().set("border", "1px solid #94949E");
 	buttonLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.BETWEEN);
@@ -56,6 +78,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	
 	buttonLayout.add(buttonOpenDiary,buttonOpenInstructions,buttonOpenContacts,buttonOpenEmergency);
 	viewLayout.add(buttonLayout);
-	add(viewLayout);
+	add(image1,viewLayout);
     }
 }

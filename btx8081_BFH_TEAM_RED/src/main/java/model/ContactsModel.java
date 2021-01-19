@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 public class ContactsModel {
 
