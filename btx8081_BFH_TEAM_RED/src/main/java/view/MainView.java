@@ -11,18 +11,14 @@ import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.server.PWA;
 
-/**
- * The main view contains a button and a click listener.
- */
 @Route("main")
 @RouteAlias("")
 @PWA(name = "Project Base for Vaadin", shortName = "Project Base")
 public class MainView extends VerticalLayout implements HasComponents, RouterLayout{
-    private TextField displayUsername = new TextField(); // shows current result
+    private TextField displayUsername = new TextField(); 
  
-
     public MainView() {
-
+	
 	displayUsername.setReadOnly(true);
 	add(displayUsername);
 
@@ -36,7 +32,6 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
 	buttonLayout.setMargin(true);
 	buttonLayout.setSpacing(false);
 		
-
 	Button buttonOpenDiary = new Button("Diary", VaadinIcon.BOOK.create());
 	buttonOpenDiary.addClickListener(e-> {
 	    buttonOpenDiary.getUI().ifPresent(ui -> ui.navigate("diary"));
