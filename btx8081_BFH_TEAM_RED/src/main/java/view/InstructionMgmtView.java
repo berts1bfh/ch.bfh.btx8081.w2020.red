@@ -7,6 +7,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.Grid.Column;
 import com.vaadin.flow.component.grid.editor.Editor;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
@@ -137,8 +138,16 @@ public class InstructionMgmtView  extends VerticalLayout implements InstructionM
 		add(validationStatus, grid);
 		}
 		);
-    }
+    
+    
+    Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
+	back.addClickListener(e -> {
+	    back.getUI().ifPresent(ui -> ui.navigate("instruction"));
+	}
+		);
+	add(back);
 
+    }
     @Override
     public void setInstructions(ArrayList<InstructionModel> instructionList) {
     	this.instructions = instructionList;
