@@ -1,6 +1,6 @@
-package view;
+package view.instruction;
 
-import model.InstructionModel;
+import model.instruction.InstructionModel;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
-package view;
+package view.login;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import model.User;
-import presenter.LoginPresenter;
+import model.login.User;
+import presenter.login.LoginPresenter;
 
 /**
  * LoginView managing User to be logged in

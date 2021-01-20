@@ -1,4 +1,6 @@
-package model;
+package model.instruction;
+
+import model.DbConnection;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package view;
+package view.login;
 
 import com.vaadin.flow.component.login.AbstractLogin;
 

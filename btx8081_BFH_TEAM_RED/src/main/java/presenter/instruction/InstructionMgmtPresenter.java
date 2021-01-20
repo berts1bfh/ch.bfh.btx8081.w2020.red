@@ -1,10 +1,10 @@
-package presenter;
+package presenter.instruction;
 
-import view.InstructionMgmtViewInterface;
+import view.instruction.InstructionMgmtViewInterface;
 
 import java.util.ArrayList;
 
-import model.InstructionModel;
+import model.instruction.InstructionModel;
 
 /**
  * Handles InstructionModel and InstructionMgtmView communication

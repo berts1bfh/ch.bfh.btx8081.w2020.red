@@ -1,7 +1,7 @@
-package presenter;
+package presenter.login;
 
-import model.User;
-import view.LoginViewImpl;
+import model.login.User;
+import view.login.LoginViewImpl;
 
 /**
  * Loads user and handles login

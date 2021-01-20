@@ -1,4 +1,6 @@
-package model;
+package model.login;
+
+import model.DbConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

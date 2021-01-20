@@ -5,7 +5,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import presenter.InstructionPresenter;
+import presenter.instruction.InstructionPresenter;
 
 /**
  * InstructionView manages view of Instructions

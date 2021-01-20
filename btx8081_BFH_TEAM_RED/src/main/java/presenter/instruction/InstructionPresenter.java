@@ -1,10 +1,10 @@
-package presenter;
+package presenter.instruction;
 
 
 import java.util.ArrayList;
 
-import model.InstructionModel;
-import view.InstructionViewInterface;
+import model.instruction.InstructionModel;
+import view.instruction.InstructionViewInterface;
 
 /**
  * Gets data from InstructionModel and sets instructions for InstructionView

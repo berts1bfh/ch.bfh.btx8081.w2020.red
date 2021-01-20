@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="model.UserSql" project="helloworld" 
+  <class id="1" language="java" name="model.login.UserSql" project="helloworld"
     file="/helloworld/src/main/java/model/UserSql.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="147" y="100"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="model.InstructionModel" project="helloworld" 
+  <class id="4" language="java" name="model.instruction.InstructionModel" project="helloworld"
     file="/helloworld/src/main/java/model/InstructionModel.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="680" y="164"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="model.User" project="helloworld" file="/helloworld/src/main/java/model/User.java" 
+  <class id="5" language="java" name="model.login.User" project="helloworld" file="/helloworld/src/main/java/model/User.java"
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1297" y="242"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="presenter.InstructionMgmtPresenter" project="helloworld" 
+  <class id="6" language="java" name="presenter.instruction.InstructionMgmtPresenter" project="helloworld"
     file="/helloworld/src/main/java/presenter/InstructionMgmtPresenter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="183" y="443"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="presenter.InstructionPresenter" project="helloworld" 
+  <class id="7" language="java" name="presenter.instruction.InstructionPresenter" project="helloworld"
     file="/helloworld/src/main/java/presenter/InstructionPresenter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="680" y="457"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="presenter.LoginPresenter" project="helloworld" 
+  <class id="8" language="java" name="presenter.login.LoginPresenter" project="helloworld"
     file="/helloworld/src/main/java/presenter/LoginPresenter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="962" y="404"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="9" language="java" name="view.LoginViewInterface" project="helloworld" 
+  <interface id="9" language="java" name="view.login.LoginViewInterface" project="helloworld"
     file="/helloworld/src/main/java/view/LoginViewInterface.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="954" y="696"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="13" language="java" name="view.InstructionViewInterface" project="helloworld" 
+  <interface id="13" language="java" name="view.instruction.InstructionViewInterface" project="helloworld"
     file="/helloworld/src/main/java/view/InstructionViewInterface.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="260" y="652"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="14" language="java" name="view.InstructionMgmtView" project="helloworld" 
+  <class id="14" language="java" name="view.instruction.InstructionMgmtView" project="helloworld"
     file="/helloworld/src/main/java/view/InstructionMgmtView.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1092" y="94"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,7 +127,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="view.LoginView" project="helloworld" 
+  <class id="15" language="java" name="view.login.LoginView" project="helloworld"
     file="/helloworld/src/main/java/view/LoginView.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1424" y="198"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,7 +136,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="view.LoginViewImpl" project="helloworld" 
+  <class id="16" language="java" name="view.login.LoginViewImpl" project="helloworld"
     file="/helloworld/src/main/java/view/LoginViewImpl.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="950" y="554"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
