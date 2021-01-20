@@ -2,15 +2,14 @@ package presenter;
 
 import model.User;
 import view.LoginViewImpl;
-import view.MainView;
 
 /**
  * Loads user and handles login
  */
 public class LoginPresenter {
 
-    private User user;
-    private LoginViewImpl view;
+    private final User user;
+    private final LoginViewImpl view;
 
     public LoginPresenter(User user, LoginViewImpl view) {
         this.user = user;
@@ -19,7 +18,8 @@ public class LoginPresenter {
 
     /**
      * Handles login request from user
-     * @param login String username for login
+     *
+     * @param login    String username for login
      * @param password String password for login
      */
     public void sendLoginRequest(String login, String password) {

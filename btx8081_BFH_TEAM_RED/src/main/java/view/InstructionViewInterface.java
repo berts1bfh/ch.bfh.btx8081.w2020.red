@@ -2,8 +2,11 @@ package view;
 
 import java.util.ArrayList;
 
+/**
+ * Interface for InstructionView
+ */
 public interface InstructionViewInterface {
     
-    public void setInstructions(ArrayList<ArrayList<String>> instructionList);
+    void setInstructions(ArrayList<ArrayList<String>> instructionList);
 
 }

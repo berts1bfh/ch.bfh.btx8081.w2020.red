@@ -1,8 +1,8 @@
 package presenter;
 
 
-
 import java.util.ArrayList;
+
 import model.InstructionModel;
 import view.InstructionViewInterface;
 
@@ -16,6 +16,7 @@ public class InstructionPresenter {
 
     /**
      * Handles InstructionView and InstructionModel data
+     *
      * @param view InstructionViewInterface
      */
     public InstructionPresenter(InstructionViewInterface view) {
@@ -25,6 +26,7 @@ public class InstructionPresenter {
 
     /**
      * Returns instruction data as an ArrayList from InstructionModel
+     *
      * @return ArrayList<> of instructions
      */
     public ArrayList<ArrayList<String>> getInstructions() {

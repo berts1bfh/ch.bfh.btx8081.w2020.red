@@ -6,7 +6,7 @@ import model.ContactsModel;
 
 public class ContactsPresenter {
 
-	private ArrayList<Contact> contacts;
+	private final ArrayList<Contact> contacts;
 	public ContactsModel contactModel = new ContactsModel();
 
 	public ContactsPresenter() {
@@ -40,7 +40,7 @@ public class ContactsPresenter {
 	}
 //	pass the contact object to the contact model
 	public void editDbContact(Contact contact) {
-		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(), 
+		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(), contact.getHouseNum(),
 				contact.getStreet(), contact.getCity());
 	}
 

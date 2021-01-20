@@ -20,124 +20,136 @@ import presenter.InstructionMgmtPresenter;
 
 import java.util.*;
 
-
+/**
+ * View to update, remove and add Instructions
+ */
 @Route("InstructionMgmtView")
-public class InstructionMgmtView  extends VerticalLayout implements InstructionMgmtViewInterface {
+public class InstructionMgmtView extends VerticalLayout implements InstructionMgmtViewInterface {
 
     InstructionMgmtPresenter presenter;
     private ArrayList<InstructionModel> instructions;
 
     public InstructionMgmtView() {
 
-	presenter = new InstructionMgmtPresenter(this);
-	presenter.setInstructions();
+        presenter = new InstructionMgmtPresenter(this);
+        presenter.setInstructions();
 
-	Div validationStatus = new Div();
-	validationStatus.getStyle().set("color", "Red");
-	validationStatus.setId("validation");
-	add(validationStatus);
-	
-	Grid<InstructionModel> grid = new Grid<>();
-	grid.setItems(instructions);
-	Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
-	Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
+        Div validationStatus = new Div();
+        validationStatus.getStyle().set("color", "Red");
+        validationStatus.setId("validation");
+        add(validationStatus);
 
-	Button addButton = new Button("Add Item", event -> {
-	    InstructionModel newModel = new InstructionModel(99999, "X", "Y");
-	    presenter.addNewModel(newModel);
-	    instructions.add(newModel);
-	    grid.getDataProvider().refreshAll();
-	});
+        Grid<InstructionModel> grid = new Grid<>();
+        grid.setItems(instructions);
+        Grid.Column<InstructionModel> titelColumn = grid.addColumn(InstructionModel::getTitle).setHeader("Titel");
+        Grid.Column<InstructionModel> textColumn = grid.addColumn(InstructionModel::getText).setHeader("Text");
 
-	Button removeButton = new Button("Remove last", event -> {
-	    InstructionModel lastModel = instructions.get(instructions.size() -1);
-	    presenter.deleteModel(lastModel);
-	    instructions.remove(instructions.size() - 1);
-	    grid.getDataProvider().refreshAll();
-	});
+        Button addButton = new Button("Add Item", event -> {
+            InstructionModel newModel = new InstructionModel(99999, "X", "Y");
+            presenter.addNewModel(newModel);
+            instructions.add(newModel);
+            grid.getDataProvider().refreshAll();
+        });
 
-	FooterRow footerRow = grid.appendFooterRow();
-	footerRow.getCell(titelColumn).setComponent(addButton);
-	footerRow.getCell(textColumn).setComponent(removeButton);
+        Button removeButton = new Button("Remove last", event -> {
+            InstructionModel lastModel = instructions.get(instructions.size() - 1);
+            presenter.deleteModel(lastModel);
+            instructions.remove(instructions.size() - 1);
+            grid.getDataProvider().refreshAll();
+        });
 
-	add(grid,addButton,removeButton);
+        FooterRow footerRow = grid.appendFooterRow();
+        footerRow.getCell(titelColumn).setComponent(addButton);
+        footerRow.getCell(textColumn).setComponent(removeButton);
 
-	Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
-	Editor<InstructionModel> editor = grid.getEditor();
-	editor.setBinder(binder);
-	editor.setBuffered(true);
+        add(grid, addButton, removeButton);
 
-	TextField titleField = new TextField();
-	binder.forField(titleField)
-	.withValidator(new StringLengthValidator("Title length must be between 1 and 10.", 1, 10))
-	.withStatusLabel(validationStatus).bind("title");
-	titelColumn.setEditorComponent(titleField);
+        Binder<InstructionModel> binder = new Binder<>(InstructionModel.class);
+        Editor<InstructionModel> editor = grid.getEditor();
+        editor.setBinder(binder);
+        editor.setBuffered(true);
 
-	TextField textField = new TextField();
-	binder.forField(textField)
-	.withValidator(new StringLengthValidator("Text length must be between 1 and 300.", 1, 300))
-	.withStatusLabel(validationStatus).bind("text");
-	textColumn.setEditorComponent(textField);
+        TextField titleField = new TextField();
+        binder.forField(titleField)
+                .withValidator(new StringLengthValidator("Title length must be between 1 and 10.", 1, 10))
+                .withStatusLabel(validationStatus).bind("title");
+        titelColumn.setEditorComponent(titleField);
+
+        TextField textField = new TextField();
+        binder.forField(textField)
+                .withValidator(new StringLengthValidator("Text length must be between 1 and 300.", 1, 300))
+                .withStatusLabel(validationStatus).bind("text");
+        textColumn.setEditorComponent(textField);
 
 
-	Collection<Button> editButtons = Collections
-		.newSetFromMap(new WeakHashMap<>());
+        Collection<Button> editButtons = Collections
+                .newSetFromMap(new WeakHashMap<>());
 
-	Column<InstructionModel> editorColumn = grid.addComponentColumn(instruction -> {
-	    Button edit = new Button("Edit");
-	    edit.addClassName("edit");
-	    edit.addClickListener(e -> {
-		editor.editItem(instruction);
-		titleField.focus();
-	    });
-	    edit.setEnabled(!editor.isOpen());
-	    editButtons.add(edit);
-	    return edit;
-	});
+        Column<InstructionModel> editorColumn = grid.addComponentColumn(instruction -> {
+            Button edit = new Button("Edit");
+            edit.addClassName("edit");
+            edit.addClickListener(e -> {
+                editor.editItem(instruction);
+                titleField.focus();
+            });
+            edit.setEnabled(!editor.isOpen());
+            editButtons.add(edit);
+            return edit;
+        });
 
-	editor.addOpenListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
-	editor.addCloseListener(e -> editButtons.stream()
-		.forEach(button -> button.setEnabled(!editor.isOpen())));
+        editor.addOpenListener(e -> editButtons.stream()
+                .forEach(button -> button.setEnabled(!editor.isOpen())));
+        editor.addCloseListener(e -> editButtons.stream()
+                .forEach(button -> button.setEnabled(!editor.isOpen())));
 
-	Button save = new Button("Save", e -> editor.save());
-	save.addClassName("save");
+        Button save = new Button("Save", e -> editor.save());
+        save.addClassName("save");
 
-	Button cancel = new Button("Exit", e -> editor.cancel());
-	cancel.addClassName("cancel");
+        Button cancel = new Button("Exit", e -> editor.cancel());
+        cancel.addClassName("cancel");
 
-	grid.getElement().addEventListener("keyup", event -> editor.cancel())
-	.setFilter("event.key === 'Escape' || event.key === 'Esc'");
+        grid.getElement().addEventListener("keyup", event -> editor.cancel())
+                .setFilter("event.key === 'Escape' || event.key === 'Esc'");
 
-	Div buttons = new Div(save, cancel);
-	editorColumn.setEditorComponent(buttons);
+        Div buttons = new Div(save, cancel);
+        editorColumn.setEditorComponent(buttons);
 
-	Label message = new Label("-");
+        Label message = new Label("-");
 
-	editor.addSaveListener(
-		event -> 
-		{message.setText(event.getItem().toString() + ", "
-			+ event.getItem().toString());
-		presenter.updateModel();
-		}
-		);
+        editor.addSaveListener(
+                event ->
+                {
+                    message.setText(event.getItem().toString() + ", "
+                            + event.getItem().toString());
+                    presenter.updateModel();
+                }
+        );
 
-	Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
-	back.addClickListener(e -> {
-	    back.getUI().ifPresent(ui -> ui.navigate("instruction"));
-	}
-		);
-	add(back);
+        Button back = new Button("Back", VaadinIcon.LEVEL_LEFT.create());
+        back.addClickListener(e -> {
+                    back.getUI().ifPresent(ui -> ui.navigate("instruction"));
+                }
+        );
+        add(back);
 
     }
+
+    /**
+     * Sets current list of Instructions
+     * @param instructionList to be used in view
+     */
     @Override
     public void setInstructions(ArrayList<InstructionModel> instructionList) {
-	this.instructions = instructionList;
+        this.instructions = instructionList;
     }
 
+    /**
+     * Returns current list of Instructions
+     * @return ArrayList<InstructionModel> of current instructions used in view
+     */
     @Override
     public ArrayList<InstructionModel> getInstructions() {
-	return this.instructions;
+        return this.instructions;
     }
 }
 

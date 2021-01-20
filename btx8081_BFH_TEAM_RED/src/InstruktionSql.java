@@ -45,13 +45,6 @@ public class InstruktionSql {
 				String instruction = rs.getString("instruktion");
 				String titel = rs.getString("inst_Titel");
 
-				// print instruction table
-				System.out.println("ID: " + inst_ID);
-				System.out.println("Titel: " + titel);
-				System.out.println("instruction: " + instruction);
-
-				// instruction_text.close();
-
 			}
 			con.commit();
 			con.close();

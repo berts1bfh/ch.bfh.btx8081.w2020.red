@@ -7,6 +7,11 @@ import com.vaadin.flow.component.login.AbstractLogin;
  */
 public interface LoginViewInterface {
 
+    /**
+     * Authentication of user
+     * @param event LoginEvent for authentication
+     * @return boolean success of authentication attempt
+     */
     boolean authenticate(AbstractLogin.LoginEvent event);
 
 }

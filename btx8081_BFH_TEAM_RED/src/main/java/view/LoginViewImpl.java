@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 /**
  * LoginView implementation for login form
+ * TODO: Implement in main-view overlay (?)
  */
 public class LoginViewImpl extends VerticalLayout implements LoginViewInterface {
 
@@ -24,6 +25,7 @@ public class LoginViewImpl extends VerticalLayout implements LoginViewInterface 
 
     /**
      * Authenticates user login
+     *
      * @param event LoginEvent
      * @return boolean
      */

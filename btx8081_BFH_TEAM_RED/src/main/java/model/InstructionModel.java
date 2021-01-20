@@ -8,225 +8,208 @@ import java.util.ArrayList;
  */
 public class InstructionModel {
 
-	private int id;
-	private String title;
-	private String text;
+    private int id;
+    private String title;
+    private String text;
 
-	public static Connection connection = DbConnection.connect();
-	
-	public InstructionModel(int id, String title, String text) {
-		this.id = id;
-		this.title = title;
-		this.text = text;
-	}
+    public static Connection connection = DbConnection.connect();
 
-	/**
-	 * Returns InstructionModel for each instruction found in DB
-	 * @return ArrayList<InstructionModel> of all instructions in DB
-	 */
-	public static ArrayList<InstructionModel> getInstructionsFromDB() {
-		ArrayList<InstructionModel> models = new ArrayList<>();
-		try {
-			connection = DbConnection.connect();
-			Statement instruction_text = connection.createStatement();
-			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
-			// complete the query
-			connection.setAutoCommit(false); // accordingly
+    public InstructionModel(int id, String title, String text) {
+        this.id = id;
+        this.title = title;
+        this.text = text;
+    }
 
-			while (rs.next()) {
+    /**
+     * Returns InstructionModel for each instruction found in DB
+     *
+     * @return ArrayList<InstructionModel> of all instructions in DB
+     */
+    public static ArrayList<InstructionModel> getInstructionsFromDB() {
+        ArrayList<InstructionModel> models = new ArrayList<>();
+        try {
+            connection = DbConnection.connect();
+            Statement instruction_text = connection.createStatement();
+            ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
+            // complete the query
+            connection.setAutoCommit(false); // accordingly
 
-				int inst_ID = rs.getInt("inst_id");
-				String instruction = rs.getString("instruktion");
-				String inst_titel = rs.getString("inst_Titel");
-				models.add(new InstructionModel(inst_ID, inst_titel, instruction));
+            while (rs.next()) {
 
-				// print instruction table
-				System.out.println("ID: " + inst_ID);
-				System.out.println("Titel: " + inst_titel);
-				System.out.println("instruction: " + instruction);
+                int inst_ID = rs.getInt("inst_id");
+                String instruction = rs.getString("instruktion");
+                String inst_titel = rs.getString("inst_Titel");
+                models.add(new InstructionModel(inst_ID, inst_titel, instruction));
 
-				// instruction_text.close();
+                // print instruction table
+                System.out.println("ID: " + inst_ID);
+                System.out.println("Titel: " + inst_titel);
+                System.out.println("instruction: " + instruction);
 
-			}
-			connection.commit();
-			// connection.close(); with Singleton pattern: Single close on leaving / ending?
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return models;
-	}
+                // instruction_text.close();
 
-	/**
-	 * Saves instruction to DB
-	 */
-	public void saveToDB() {
-		// TODO: Inst_id should be auto-increment!
-		String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
-		try {
-			connection = DbConnection.connect();
-			PreparedStatement pstmt = connection.prepareStatement(sql);
+            }
+            connection.commit();
+            // connection.close(); with Singleton pattern: Single close on leaving / ending?
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return models;
+    }
 
-			pstmt.setInt(1, id);
-			pstmt.setString(2, text);
-			pstmt.setString(3, title);
+    /**
+     * Saves instruction to DB
+     */
+    public void saveToDB() {
+        // TODO: Inst_id should be auto-increment!
+        String sql = "INSERT INTO instruktionen(inst_id,instruktion,inst_titel) VALUES(?,?,?)";
+        try {
+            connection = DbConnection.connect();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
 
-			pstmt.executeUpdate();
+            pstmt.setInt(1, id);
+            pstmt.setString(2, text);
+            pstmt.setString(3, title);
 
-			connection.commit();
+            pstmt.executeUpdate();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+            connection.commit();
 
-	/**
-	 * Saves instruction to DB with  auto-increment of id
-	 */
-	public void createInDB() {
-		// TODO: Inst_id should be auto-increment!
-		String sql = "INSERT INTO instruktionen(instruktion,inst_titel) VALUES(?,?)";
-		try {
-			connection = DbConnection.connect();
-			PreparedStatement pstmt = connection.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-			pstmt.setString(1, text);
-			pstmt.setString(2, title);
+    /**
+     * Saves instruction to DB with  auto-increment of id
+     */
+    public void createInDB() {
+        // TODO: Inst_id should be auto-increment!
+        String sql = "INSERT INTO instruktionen(instruktion,inst_titel) VALUES(?,?)";
+        try {
+            connection = DbConnection.connect();
+            PreparedStatement pstmt = connection.prepareStatement(sql);
 
-			pstmt.executeUpdate();
+            pstmt.setString(1, text);
+            pstmt.setString(2, title);
 
-			connection.commit();
+            pstmt.executeUpdate();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+            connection.commit();
 
-	/**
-	 * Loads / gets the data for instruction with id from the DB
-	 */
-	public void getFromDB() {
-		try {
-			connection = DbConnection.connect();
-			Statement instruction_text = connection.createStatement();
-			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"); // in case of multiple users,
-			// complete the query
-			connection.setAutoCommit(false); // accordingly
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-			while (rs.next()) {
+    /**
+     * Loads / gets the data for instruction with id from the DB
+     */
+    public void getFromDB() {
+        try {
+            connection = DbConnection.connect();
+            Statement instruction_text = connection.createStatement();
+            ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen");
+            // in case of multiple users, complete the query accordingly
+            connection.setAutoCommit(false);
 
-				int inst_ID = rs.getInt("inst_id");
-				String instruction = rs.getString("instruktion");
-				String titel = rs.getString("inst_Titel");
+            while (rs.next()) {
 
-				// print instruction table
-				System.out.println("ID: " + inst_ID);
-				System.out.println("Titel: " + titel);
-				System.out.println("instruction: " + instruction);
+                int inst_ID = rs.getInt("inst_id");
+                String instruction = rs.getString("instruktion");
+                String titel = rs.getString("inst_Titel");
 
-				// instruction_text.close();
+            }
+            connection.commit();
+            connection.close();
 
-			}
-			connection.commit();
-			connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+    /**
+     * Updates entry for current instruction in the DB
+     */
+    public void updateInDB() {
+        try {
+            connection = DbConnection.connect();
+            Statement instruction_text = connection.createStatement();
 
-	/**
-	 * Updates entry for current instruction in the DB
-	 */
-	public void updateInDB() {
-		try {
-			connection = DbConnection.connect();
-			Statement instruction_text = connection.createStatement();
+            String sql = "update instruktionen set instruktion = '" + text
+                    + "' where inst_id = " + id + ";";
+            instruction_text.executeUpdate(sql);
+            connection.setAutoCommit(false);
 
-			String sql = "update instruktionen set instruktion = '" + text
-					+ "' where inst_id = " + id + ";";
-			instruction_text.executeUpdate(sql);
-			connection.setAutoCommit(false);
+            sql = "update instruktionen set inst_titel = '" + title
+                    + "' where inst_id = " + id + ";";
+            instruction_text.executeUpdate(sql);
+            connection.setAutoCommit(false);
 
-			sql = "update instruktionen set inst_titel = '" + title
-					+ "' where inst_id = " + id + ";";
-			instruction_text.executeUpdate(sql);
-			connection.setAutoCommit(false);
+            ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"
+                    + " where inst_id =" + id + ";");
+            int inst_ID = rs.getInt("inst_id");
+            String instruction = rs.getString("instruktion");
+            String titel = rs.getString("inst_Titel");
 
-			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen"
-					+ " where inst_id =" + id + ";");
-			int inst_ID = rs.getInt("inst_id");
-			String instruction = rs.getString("instruktion");
-			String titel = rs.getString("inst_Titel");
+            connection.commit();
+            // connection.close(); not with DbConnection singleton pattern
 
-			// print instruction table
-			System.out.println("ID: " + inst_ID);
-			System.out.println("Titel: " + titel);
-			System.out.println("instruction: " + instruction);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-			// instruction_text.close();
-			connection.commit();
-			// connection.close(); not with DbConnection singleton pattern
+    public void deleteFromDB() {
+        try {
+            connection = DbConnection.connect();
+            Statement instruction_text = connection.createStatement();
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void deleteFromDB() {
-		try {
-			connection = DbConnection.connect();
-			Statement instruction_text = connection.createStatement();
+            String sql = "DELETE from INSTRUKTIONEN WHERE inst_id=" + id + ";";
+            instruction_text.executeUpdate(sql);
 
-			String sql = "DELETE from INSTRUKTIONEN WHERE inst_id=" + id + ";";
-			instruction_text.executeUpdate(sql);
+            ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen");
 
-			ResultSet rs = instruction_text.executeQuery("SELECT * FROM instruktionen");
+            while (rs.next()) {
 
-			while (rs.next()) {
+                int inst_ID = rs.getInt("inst_id");
+                String instruction = rs.getString("instruktion");
+                String titel = rs.getString("inst_Titel");
 
-				int inst_ID = rs.getInt("inst_id");
-				String instruction = rs.getString("instruktion");
-				String titel = rs.getString("inst_Titel");
+            }
+            connection.commit();
 
-				// print instruction table
-				System.out.println("ID: " + inst_ID);
-				System.out.println("Titel: " + titel);
-				System.out.println("instruction: " + instruction);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-			}
-			connection.commit();
+        id = 0;
+        text = null;
+        title = null;
+    }
 
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+    public int getId() {
+        return id;
+    }
 
-		id = 0;
-		text = null;
-		title = null;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public int getId() {
-		return id;
-	}
-	
-	public String getTitle() {
-		return title;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getText() {
+        return text;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
-
-	@Override
-	public String toString() {
-		return "InstructionModel [id=" + id + ", title=" + title + ", text=" + text + "]";
-	}
+    @Override
+    public String toString() {
+        return "InstructionModel [id=" + id + ", title=" + title + ", text=" + text + "]";
+    }
 }

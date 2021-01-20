@@ -6,22 +6,27 @@ import java.util.ArrayList;
 
 import model.InstructionModel;
 
+/**
+ * Handles InstructionModel and InstructionMgtmView communication
+ */
 public class InstructionMgmtPresenter {
 
-    private ArrayList<InstructionModel> models;
+    private final ArrayList<InstructionModel> models;
     InstructionMgmtViewInterface view;
 
     /**
      * Handles InstructionModel and InstructionMgmtView
+     *
      * @param view InstructionViewInterface
      */
     public InstructionMgmtPresenter(InstructionMgmtViewInterface view) {
         this.models = InstructionModel.getInstructionsFromDB();
-	    this.view = view;
+        this.view = view;
     }
 
     /**
      * Returns instruction data as an ArrayList from InstructionModel
+     *
      * @return ArrayList<> of instructions
      */
     private ArrayList<InstructionModel> getInstructions() {
@@ -32,7 +37,7 @@ public class InstructionMgmtPresenter {
      * Sets instructions from InstructionModel on InstructionView
      */
     public void setInstructions() {
-	    view.setInstructions(getInstructions());
+        view.setInstructions(getInstructions());
     }
 
     /**
@@ -46,6 +51,7 @@ public class InstructionMgmtPresenter {
 
     /**
      * Updates a specific InstructionModel based on id
+     *
      * @param id id of model to be updated
      */
     public void updateModel(int id) { // TODO: Use model list from presenter only
@@ -58,6 +64,7 @@ public class InstructionMgmtPresenter {
 
     /**
      * Creates new model in DB using auto-increment for ID
+     *
      * @param model to be created
      */
     public void addNewModel(InstructionModel model) {
@@ -66,6 +73,7 @@ public class InstructionMgmtPresenter {
 
     /**
      * Saves a model into the DB
+     *
      * @param model model to be added
      */
     public void addModel(InstructionModel model) {
@@ -74,6 +82,7 @@ public class InstructionMgmtPresenter {
 
     /**
      * Deletes model from the DB
+     *
      * @param model model to be deleted
      */
     public void deleteModel(InstructionModel model) {
