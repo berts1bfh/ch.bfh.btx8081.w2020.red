@@ -7,36 +7,33 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
 
 public class ContactsModel {
-	
+
 	public static Connection connection = DbConnection.connect();
-	
-	public void saveContact(String id,String name, String surname, String phone_num,String house_num, String street, String city) {
-		
+
+	public void saveContact(String id, String name, String surname, String phone_num, String house_num, String street,
+			String city) {
+
 		try {
-			
 
 			System.out.println(id);
-//			Statement instruction_text = connection.createStatement();
 			connection.setAutoCommit(false);
 
-			PreparedStatement pstmt = connection.prepareStatement("UPDATE contacts SET Name = '"+name+"', Surname = '"+surname+"',"
-					+ " Phone_Num ='"+phone_num+"', House_Num ='"+house_num+"', Street ='"+street+"', City='"+city+"' where ID = '"+id+"';");
-			
-            pstmt.executeUpdate();
-			
+			PreparedStatement pstmt = connection.prepareStatement("UPDATE contacts SET Name = '" + name
+					+ "', Surname = '" + surname + "'," + " Phone_Num ='" + phone_num + "', House_Num ='" + house_num
+					+ "', Street ='" + street + "', City='" + city + "' where ID = '" + id + "';");
+
+			pstmt.executeUpdate();
+
 			connection.commit();
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	
 //Create a array of Contacts that will be delivered to the Contact presenter.
 	public ArrayList<Contact> getContactsFromDB() {
 
@@ -51,7 +48,7 @@ public class ContactsModel {
 
 			while (rs.next()) {
 				Contact contact = new Contact();
-				
+
 				contact.setId(rs.getString("ID"));
 				contact.setName(rs.getString("Name"));
 				contact.setSurname(rs.getString("Surname"));
@@ -69,17 +66,15 @@ public class ContactsModel {
 		}
 		return contactsList;
 	}
-	
-	
+
 	public void disconnect() {
 		try {
 			connection.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
 	}
-	
 
 }
