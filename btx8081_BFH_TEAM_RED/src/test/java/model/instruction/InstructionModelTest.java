@@ -5,6 +5,9 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test for InstructionModel, did not work sadly
+ */
 public class InstructionModelTest {
 
     @Test
