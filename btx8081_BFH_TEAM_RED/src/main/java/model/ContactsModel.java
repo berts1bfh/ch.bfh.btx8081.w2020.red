@@ -24,7 +24,6 @@ public class ContactsModel {
 
 		try {
 
-			System.out.println(id);
 			connection.setAutoCommit(false);
 
 			PreparedStatement pstmt = connection.prepareStatement("UPDATE contacts SET Name = '" + name
