@@ -33,13 +33,17 @@ public class ContactsPresenter {
 		return contactInfos;
 	}
 
-//	return a array the contacts objects
+//	return the array of contact objects
 	public ArrayList<Contact> getContactsObj() {
 		return contacts;
 
 	}
 
-//	pass the contact object to the contact model
+	 /**
+     * pass a contact object to the contact model
+     *
+     * @param Contact object
+     */
 	public void editDbContact(Contact contact) {
 		contactModel.saveContact(contact.getId(), contact.getName(), contact.getSurname(), contact.getPhoneNum(),
 				contact.getHouseNum(), contact.getStreet(), contact.getCity());

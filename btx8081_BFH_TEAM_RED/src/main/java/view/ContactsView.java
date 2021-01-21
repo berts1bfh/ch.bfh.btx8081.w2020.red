@@ -23,13 +23,16 @@ public class ContactsView extends VerticalLayout {
 	public ContactsPresenter contactPresenter = new ContactsPresenter();
 	int index = 1;
 
+	/**
+	 * Show the contacts in the screen
+	 */
 	public void showContacts() {
 
-//		Info order in the array (name,surName,phone,street,houseNum,city);
+//		Info order in the array 0-name,1-surName,2-phone,3-street,4-houseNum,5-city
 		for (Contact Contact : contactObjs) {
 			VerticalLayout layout = new VerticalLayout();
 
-//			using TextField as a #Marker that will be used as Db ID in the edit/saving process
+//			using TextField as a #Marker that will be used as ID in the edit/saving process
 			TextField ContactNumber = new TextField();
 			ContactNumber.setValue(String.valueOf(index));
 
@@ -37,8 +40,6 @@ public class ContactsView extends VerticalLayout {
 			Label phone = new Label("Phone Number: " + Contact.getPhoneNum());
 			Label address = new Label("Address: " + Contact.getStreet() + ", number " + Contact.getHouseNum() + ", "
 					+ Contact.getCity() + ".");
-
-			
 
 			Button edit = new Button("Edit ", VaadinIcon.USERS.create());
 			edit.addClickListener(e -> {
@@ -60,6 +61,13 @@ public class ContactsView extends VerticalLayout {
 	private void clearCanvas() {
 		this.removeAll();
 	}
+
+	/**
+	 * Edit the contacts on the database
+	 *
+	 * @param Recieves the Presenter object and the ID of the contact to be edited
+	 *                 in the database
+	 */
 
 	public void editContact(String id, ContactsPresenter presenter) {
 
@@ -117,7 +125,6 @@ public class ContactsView extends VerticalLayout {
 
 		add(new Text("Contact Information"));
 
-//		showContacts(contactsInfo,this);
 		showContacts();
 
 		add(back);
