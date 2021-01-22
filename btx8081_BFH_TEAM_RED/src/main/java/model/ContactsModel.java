@@ -11,13 +11,19 @@ import java.util.ArrayList;
 public class ContactsModel {
 
 	public static Connection connection = DbConnection.connect();
+	
+	
+	 /**
+     * Save the contacts information to the database
+     *
+     * @param Strings with the contact information to be saved
+     */
 
 	public void saveContact(String id, String name, String surname, String phone_num, String house_num, String street,
 			String city) {
 
 		try {
 
-			System.out.println(id);
 			connection.setAutoCommit(false);
 
 			PreparedStatement pstmt = connection.prepareStatement("UPDATE contacts SET Name = '" + name
@@ -34,7 +40,9 @@ public class ContactsModel {
 
 	}
 
-//Create a array of Contacts that will be delivered to the Contact presenter.
+	/**
+     * Create a array of Contacts that will be delivered to the presenter.
+     */
 	public ArrayList<Contact> getContactsFromDB() {
 
 		ArrayList<Contact> contactsList = new ArrayList<>();
@@ -67,14 +75,6 @@ public class ContactsModel {
 		return contactsList;
 	}
 
-	public void disconnect() {
-		try {
-			connection.close();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-	}
+	
 
 }

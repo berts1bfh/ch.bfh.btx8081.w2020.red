@@ -124,6 +124,28 @@
             <artifactId>vaadin-testbench</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>   
+            <groupId>org.seleniumhq.selenium</groupId>   
+            <artifactId>selenium-java</artifactId>   
+            <version>2.53.0</version>   
+        </dependency>   
+        <dependency>   
+            <groupId>org.seleniumhq.selenium</groupId>   
+            <artifactId>selenium-chrome-driver</artifactId>   
+            <version>2.53.0</version>   
+        </dependency>   
+        <dependency>   
+            <groupId>io.github.bonigarcia</groupId>    
+            <artifactId>webdrivermanager</artifactId>   
+            <version>1.4.5</version>    
+        </dependency>    
+
+<dependency>
+    <groupId>org.junit.vintage</groupId>
+    <artifactId>junit-vintage-engine</artifactId>
+    <version>5.7.0</version>
+</dependency>
+        
     </dependencies>
 
     <build>

@@ -26,7 +26,7 @@ public class MainView extends VerticalLayout implements HasComponents, RouterLay
     public MainView() {
 
 
-        Image image1 = new Image("https://www.acadia-pharm.com/wp-content/themes/acadia/images/logo.png",
+        Image image1 = new Image("https://i.ibb.co/jJcZvbB/logo.png",
                 "Button image");
 
         image1.setWidth("350px");

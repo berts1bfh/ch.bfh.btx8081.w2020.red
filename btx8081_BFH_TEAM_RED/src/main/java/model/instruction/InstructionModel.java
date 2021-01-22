@@ -43,11 +43,6 @@ public class InstructionModel {
                 String inst_titel = rs.getString("inst_Titel");
                 models.add(new InstructionModel(inst_ID, inst_titel, instruction));
 
-                // print instruction table
-                System.out.println("ID: " + inst_ID);
-                System.out.println("Titel: " + inst_titel);
-                System.out.println("instruction: " + instruction);
-
                 // instruction_text.close();
 
             }
