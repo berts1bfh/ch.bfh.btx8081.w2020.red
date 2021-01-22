@@ -1,4 +1,4 @@
-package model;
+package model.instruction;
 
 import org.junit.*;
 import java.sql.SQLException;
